@@ -1,7 +1,7 @@
 Package: glfw
 Type: Package
 Title: R Interface to the GLFW C Library
-Version: 0.1.0
+Version: 3.3.0
 Authors@R: c(
     person(given = "Ramiro", family = "Magno",
       email = "ramiro.magno@gmail.com",
