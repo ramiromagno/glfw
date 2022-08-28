@@ -8,11 +8,11 @@ Authors@R: c(
       role = c("aut", "cre"),
       comment = c(ORCID = "0000-0001-5226-3441"))
     )
-Description: GLFW is a lightweight utility library for use with OpenGL. It
-    provides programmers with the ability to create and manage windows and
-    OpenGL contexts, as well as handle joystick, keyboard and mouse input.
-    This package provides an R interface to the underlying C library
-    implementation.
+Description: GLFW is a lightweight utility library for use with OpenGL:
+    <https://www.glfw.org/>. It provides programmers with the ability to
+    create and manage windows and OpenGL contexts, as well as handle joystick,
+    keyboard and mouse input. This package provides an R interface to the
+    underlying C library implementation.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
