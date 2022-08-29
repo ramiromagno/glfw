@@ -30,5 +30,3 @@ glfw_destroy_window(window)
 
 # Terminate GLFW
 glfw_terminate()
-
-
