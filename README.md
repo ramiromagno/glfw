@@ -20,3 +20,9 @@ You can install the development version of `{glfw}` like so:
 # install.packages("remotes")
 remotes::install_github("ramiromagno/glfw")
 ```
+
+## Admonition
+
+This R package is still very early in its development and is hardly
+usable at the moment. Feedback and contributions are very welcome
+nevertheless.
