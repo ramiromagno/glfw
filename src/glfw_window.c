@@ -58,3 +58,62 @@ SEXP glfw_get_window_size_(SEXP window) {
   UNPROTECT(1);
   return x;
 }
+
+// Global variable to hold the R function (closure) to be used as
+// framebuffer buffer size (fbs) callback.
+static SEXP r_fbs_callback;
+
+static void fbs_cb(GLFWwindow* window, int width, int height)
+{
+  if (window == NULL) {
+    const char msg[] = "Window pointer is nil!\n";
+    Rf_error(msg);
+  }
+
+  SEXP r_window = PROTECT(R_MakeExternalPtr(window, R_NilValue, R_NilValue));
+  SEXP r_width = PROTECT(Rf_ScalarInteger(width));
+  SEXP r_height = PROTECT(Rf_ScalarInteger(height));
+
+  SEXP call = PROTECT(Rf_lang4(r_fbs_callback, r_window, r_width, r_height));
+  Rf_eval(call, R_EmptyEnv);
+
+  UNPROTECT(4);
+  return;
+}
+
+SEXP glfw_set_framebuffer_size_callback_(SEXP window, SEXP cbfun) {
+
+  if (R_ExternalPtrAddr(window) == NULL) {
+    const char msg[] = "Window pointer is nil!\n";
+    Rf_error(msg);
+    return(R_NilValue);
+  }
+
+  r_fbs_callback = cbfun;
+  glfwSetFramebufferSizeCallback((GLFWwindow *) R_ExternalPtrAddr(window), fbs_cb);
+  return R_NilValue;
+}
+
+SEXP glfw_window_should_close_(SEXP window) {
+
+  if (R_ExternalPtrAddr(window) == NULL) {
+    const char msg[] = "Window pointer is nil!\n";
+    Rf_error(msg);
+    return(R_NilValue);
+  }
+
+  int close_flag = glfwWindowShouldClose((GLFWwindow *) R_ExternalPtrAddr(window));
+  return Rf_ScalarLogical(close_flag);
+}
+
+SEXP glfw_set_window_should_close_(SEXP window, SEXP value) {
+
+  if (R_ExternalPtrAddr(window) == NULL) {
+    const char msg[] = "Window pointer is nil!\n";
+    Rf_error(msg);
+    return(R_NilValue);
+  }
+
+  glfwSetWindowShouldClose((GLFWwindow *) R_ExternalPtrAddr(window), INTEGER(value)[0]);
+  return(R_NilValue);
+}
