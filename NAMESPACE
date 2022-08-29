@@ -2,6 +2,7 @@
 
 export(gl)
 export(gl_clear)
+export(gl_clear_color)
 export(glad_load_gl)
 export(glfw)
 export(glfw_create_window)

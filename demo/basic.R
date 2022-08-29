@@ -12,10 +12,14 @@ glfw_make_context_current(window)
 # Load OpenGL functions with GLAD
 glad_load_gl()
 
+# The `gl_clear_color()` function is a state-setting function that set the
+# clearing color used by `gl_clear()`
+gl_clear_color(0.8, 0, 1, 1)
+
 # Loop until the user closes the window
 while (!glfw_window_should_close(window))
 {
-  # Render here
+  # Clear the screen using the color set by `gl_clear_color()`
   gl_clear(gl$color_buffer_bit)
 
   # Swap front and back buffers

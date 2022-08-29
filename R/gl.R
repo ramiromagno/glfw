@@ -2,3 +2,20 @@
 gl_clear <- function(mask) {
   .Call(gl_clear_, mask)
 }
+
+#' @export
+gl_clear_color <- function(red, green, blue, alpha) {
+
+  # All arguments should be numbers between 0.0 and 1.0.
+  stopifnot(is.double(red),
+            is.double(green),
+            is.double(blue),
+            is.double(alpha))
+
+  stopifnot(red   >= 0, red   <= 1,
+            green >= 0, green <= 1,
+            blue  >= 0, blue  <= 1,
+            alpha >= 0, alpha <= 1)
+
+  .Call(gl_clear_color_, red, green, blue, alpha)
+}
