@@ -12,3 +12,16 @@ SEXP glfw_make_context_current_(SEXP window) {
     return window;
   }
 }
+
+SEXP glfw_swap_buffers_(SEXP window) {
+
+  GLFWwindow *ptr = R_ExternalPtrAddr(window);
+  if (ptr == NULL) {
+    const char msg[] = "Window pointer is nil!\n";
+    Rf_error(msg);
+    return R_NilValue;
+  } else {
+    glfwSwapBuffers((GLFWwindow *) R_ExternalPtrAddr(window));
+    return window;
+  }
+}

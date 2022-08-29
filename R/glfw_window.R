@@ -28,3 +28,8 @@ glfw_set_window_should_close <- function(window, value) {
   value <- as.integer(value)
   .Call(glfw_set_window_should_close_, window, value)
 }
+
+#' @export
+glfw_poll_events <- function() {
+  .Call(glfw_poll_events_)
+}

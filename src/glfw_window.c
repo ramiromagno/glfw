@@ -117,3 +117,8 @@ SEXP glfw_set_window_should_close_(SEXP window, SEXP value) {
   glfwSetWindowShouldClose((GLFWwindow *) R_ExternalPtrAddr(window), INTEGER(value)[0]);
   return(R_NilValue);
 }
+
+SEXP glfw_poll_events_(void) {
+  glfwPollEvents();
+  return R_NilValue;
+}
