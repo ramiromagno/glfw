@@ -5,10 +5,13 @@
 #include <glfw.h>
 
 SEXP glfw_init_(void) {
-  SEXP x;
-  x = PROTECT(Rf_ScalarLogical(glfwInit()));
-  UNPROTECT(1);
-  return x;
+
+  if (!glfwInit()) {
+    Rf_error("Failed to initialize GLFW!\n");
+    return R_NilValue;
+  }
+
+  return Rf_ScalarLogical(1);
 }
 
 SEXP glfw_terminate_(void) {

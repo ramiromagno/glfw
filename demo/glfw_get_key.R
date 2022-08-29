@@ -1,7 +1,7 @@
 library(glfw)
 
 # Initialize GLFW
-if (!glfw_init()) stop("Could not initialize GLFW")
+glfw_init()
 
 # Create a windowed mode window and its OpenGL context
 window = glfw_create_window(640L, 480L, "Press Escape to close the window")
