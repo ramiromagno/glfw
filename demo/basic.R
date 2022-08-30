@@ -20,7 +20,7 @@ gl_clear_color(0.8, 0, 1, 1)
 while (!glfw_window_should_close(window))
 {
   # Clear the screen using the color set by `gl_clear_color()`
-  gl_clear(gl$color_buffer_bit)
+  gl_clear(GL$COLOR_BUFFER_BIT)
 
   # Swap front and back buffers
   glfw_swap_buffers(window)

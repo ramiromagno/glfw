@@ -16,7 +16,7 @@ glad_load_gl()
 while (!glfw_window_should_close(window))
 {
   # If the Escape key is pressed then signal to close the window.
-  if (glfw_get_key(window, glfw$key_escape) == glfw$press)
+  if (glfw_get_key(window, GLFW$KEY_ESCAPE) == GLFW$PRESS)
     glfw_set_window_should_close(window, 1)
 
   # Poll for and process events (you need this for the pressed key to be
