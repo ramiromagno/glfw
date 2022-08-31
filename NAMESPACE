@@ -2,6 +2,11 @@
 
 export(gl_clear)
 export(gl_clear_color)
+export(gl_compile_shader)
+export(gl_create_shader)
+export(gl_delete_shader)
+export(gl_is_shader)
+export(gl_shader_source)
 export(glad_load_gl)
 export(glfw_create_window)
 export(glfw_destroy_window)
