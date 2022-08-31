@@ -38,3 +38,23 @@ gl_get_shader_info_log <- function(shader) {
 gl_create_program <- function() {
   .Call(gl_create_program_)
 }
+
+#' @export
+gl_attach_shader <- function(program, shader) {
+  .Call(gl_attach_shader_, program, shader)
+}
+
+#' @export
+gl_link_program <- function(program) {
+  .Call(gl_link_program_, program)
+}
+
+#' @export
+gl_get_program_iv <- function(program, pname) {
+  .Call(gl_get_program_iv_, program, pname)
+}
+
+#' @export
+gl_get_program_info_log <- function(program) {
+  .Call(gl_get_program_info_log_, program)
+}

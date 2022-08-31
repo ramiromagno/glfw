@@ -72,3 +72,55 @@ SEXP gl_get_shader_info_log_(SEXP shader) {
 SEXP gl_create_program_(void) {
   return Rf_ScalarInteger((GLuint) glCreateProgram());
 }
+
+SEXP gl_attach_shader_(SEXP program, SEXP shader) {
+  glAttachShader((GLuint) INTEGER(program)[0], (GLuint) INTEGER(shader)[0]);
+  return R_NilValue;
+}
+
+SEXP gl_link_program_(SEXP program) {
+  glLinkProgram((GLuint) INTEGER(program)[0]);
+  return R_NilValue;
+}
+
+SEXP gl_get_program_iv_(SEXP program, SEXP pname) {
+  GLint params;
+  glGetProgramiv((GLuint) INTEGER(program)[0], (GLenum) INTEGER(pname)[0], &params);
+  return Rf_ScalarInteger(params);
+}
+
+SEXP gl_get_program_info_log_(SEXP program) {
+
+  GLint maxLength = 0;
+  GLchar *infoLog = NULL;
+  SEXP log;
+
+  // The size of the buffer required to store the information log (including the
+  // null termination character) is retrieved with `glGetProgramiv()` and stored
+  // in `maxLength`.
+  glGetProgramiv((GLuint) INTEGER(program)[0], GL_INFO_LOG_LENGTH, &maxLength);
+
+  // If maxLength == 0, then there is nothing in the log, so return NA.
+  if (!maxLength) {
+    log = PROTECT(Rf_ScalarString(NA_STRING));
+    UNPROTECT(1);
+    return log;
+  }
+
+  infoLog = (char*) malloc(maxLength*sizeof(char));
+  if(!infoLog) {
+    Rf_error("Error in memory allocation of `infoLog`\n");
+    return R_NilValue;
+  }
+
+  // Get the information log and save into `infoLog`.
+  glGetProgramInfoLog((GLuint) INTEGER(program)[0], (GLsizei) maxLength, NULL, infoLog);
+  log = PROTECT(Rf_mkString(infoLog));
+
+  // Free the memory associated with `infoLog`.
+  free(infoLog);
+
+  UNPROTECT(1);
+
+  return log;
+}
