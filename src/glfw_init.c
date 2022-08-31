@@ -48,7 +48,4 @@ SEXP glfw_get_version_string_(void) {
   return(string);
 }
 
-SEXP glfw_window_hint_(SEXP hint, SEXP value) {
-  glfwWindowHint((unsigned int)INTEGER(hint)[0], INTEGER(value)[0]);
-  return R_NilValue;
-}
+

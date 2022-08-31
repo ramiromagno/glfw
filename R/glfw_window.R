@@ -33,3 +33,8 @@ glfw_set_window_should_close <- function(window, value) {
 glfw_poll_events <- function() {
   .Call(glfw_poll_events_)
 }
+
+#' @export
+glfw_window_hint <- function(target, hint) {
+  .Call(glfw_window_hint_, target, hint)
+}

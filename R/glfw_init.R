@@ -21,8 +21,3 @@ glfw_get_version <- function() {
 glfw_get_version_string <- function() {
   .Call("glfw_get_version_string_")
 }
-
-#' @export
-glfw_window_hint <- function(hint, value) {
-  .Call("glfw_window_hint_", hint, value)
-}

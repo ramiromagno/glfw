@@ -122,3 +122,8 @@ SEXP glfw_poll_events_(void) {
   glfwPollEvents();
   return R_NilValue;
 }
+
+SEXP glfw_window_hint_(SEXP hint, SEXP value) {
+  glfwWindowHint((unsigned int)INTEGER(hint)[0], INTEGER(value)[0]);
+  return R_NilValue;
+}
