@@ -68,3 +68,7 @@ SEXP gl_get_shader_info_log_(SEXP shader) {
 
   return log;
 }
+
+SEXP gl_create_program_(void) {
+  return Rf_ScalarInteger((GLuint) glCreateProgram());
+}

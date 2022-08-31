@@ -9,6 +9,7 @@
 extern SEXP gl_clear_(SEXP);
 extern SEXP gl_clear_color_(SEXP, SEXP, SEXP, SEXP);
 extern SEXP gl_compile_shader_(SEXP);
+extern SEXP gl_create_program_();
 extern SEXP gl_create_shader_(SEXP);
 extern SEXP gl_delete_shader_(SEXP);
 extern SEXP gl_get_shader_info_log_(SEXP);
@@ -38,6 +39,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"gl_clear_",                           (DL_FUNC) &gl_clear_,                           1},
     {"gl_clear_color_",                     (DL_FUNC) &gl_clear_color_,                     4},
     {"gl_compile_shader_",                  (DL_FUNC) &gl_compile_shader_,                  1},
+    {"gl_create_program_",                  (DL_FUNC) &gl_create_program_,                  0},
     {"gl_create_shader_",                   (DL_FUNC) &gl_create_shader_,                   1},
     {"gl_delete_shader_",                   (DL_FUNC) &gl_delete_shader_,                   1},
     {"gl_get_shader_info_log_",             (DL_FUNC) &gl_get_shader_info_log_,             1},

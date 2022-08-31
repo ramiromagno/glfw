@@ -33,3 +33,8 @@ gl_get_shader_iv <- function(shader, pname) {
 gl_get_shader_info_log <- function(shader) {
   .Call(gl_get_shader_info_log_, shader)
 }
+
+#' @export
+gl_create_program <- function() {
+  .Call(gl_create_program_)
+}

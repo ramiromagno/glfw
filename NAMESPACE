@@ -3,6 +3,7 @@
 export(gl_clear)
 export(gl_clear_color)
 export(gl_compile_shader)
+export(gl_create_program)
 export(gl_create_shader)
 export(gl_delete_shader)
 export(gl_get_shader_info_log)
