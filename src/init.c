@@ -11,6 +11,7 @@ extern SEXP gl_clear_color_(SEXP, SEXP, SEXP, SEXP);
 extern SEXP gl_compile_shader_(SEXP);
 extern SEXP gl_create_shader_(SEXP);
 extern SEXP gl_delete_shader_(SEXP);
+extern SEXP gl_get_shader_iv_(SEXP, SEXP);
 extern SEXP gl_is_shader_(SEXP);
 extern SEXP gl_shader_source_(SEXP, SEXP, SEXP, SEXP);
 extern SEXP glad_load_gl_();
@@ -38,6 +39,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"gl_compile_shader_",                  (DL_FUNC) &gl_compile_shader_,                  1},
     {"gl_create_shader_",                   (DL_FUNC) &gl_create_shader_,                   1},
     {"gl_delete_shader_",                   (DL_FUNC) &gl_delete_shader_,                   1},
+    {"gl_get_shader_iv_",                   (DL_FUNC) &gl_get_shader_iv_,                   2},
     {"gl_is_shader_",                       (DL_FUNC) &gl_is_shader_,                       1},
     {"gl_shader_source_",                   (DL_FUNC) &gl_shader_source_,                   4},
     {"glad_load_gl_",                       (DL_FUNC) &glad_load_gl_,                       0},

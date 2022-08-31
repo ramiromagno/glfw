@@ -26,3 +26,9 @@ SEXP gl_delete_shader_(SEXP shader) {
   glDeleteShader((GLuint) INTEGER(shader)[0]);
   return R_NilValue;
 }
+
+SEXP gl_get_shader_iv_(SEXP shader, SEXP pname) {
+  GLint params;
+  glGetShaderiv((GLuint) INTEGER(shader)[0], (GLenum) INTEGER(pname)[0], &params);
+  return Rf_ScalarInteger(params);
+}

@@ -23,3 +23,8 @@ gl_is_shader <- function(shader) {
 gl_delete_shader <- function(shader) {
   .Call(gl_delete_shader_, shader)
 }
+
+#' @export
+gl_get_shader_iv <- function(shader, pname) {
+  .Call(gl_get_shader_iv_, shader, pname)
+}
