@@ -43,3 +43,13 @@ gl_vertex_attrib_pointer <- function(index,
 gl_enable_vertex_attrib_array <- function(index) {
   .Call(gl_enable_vertex_attrib_array_, index)
 }
+
+#' @export
+gl_delete_buffers <- function(buffers) {
+  .Call(gl_delete_buffers_, buffers)
+}
+
+#' @export
+gl_delete_vertex_arrays <- function(arrays) {
+  .Call(gl_delete_vertex_arrays_, arrays)
+}

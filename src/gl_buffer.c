@@ -138,3 +138,20 @@ SEXP gl_enable_vertex_attrib_array_(SEXP index) {
   glEnableVertexAttribArray((GLuint) INTEGER(index)[0]);
   return R_NilValue;
 }
+
+SEXP gl_delete_buffers_(SEXP buffers) {
+
+  R_xlen_t n = XLENGTH(buffers);
+  if (n == 0) Rf_error("`buffers` is empty (length is zero).");
+
+  glDeleteBuffers(n, (GLuint *) INTEGER(buffers));
+  return R_NilValue;
+}
+
+SEXP gl_delete_vertex_arrays_(SEXP arrays) {
+  R_xlen_t n = XLENGTH(arrays);
+  if (n == 0) Rf_error("`arrays` is empty (length is zero).");
+
+  glDeleteBuffers(n, (GLuint *) INTEGER(arrays));
+  return R_NilValue;
+}
