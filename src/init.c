@@ -30,6 +30,7 @@ extern SEXP gl_link_program_(SEXP);
 extern SEXP gl_shader_source_(SEXP, SEXP, SEXP, SEXP);
 extern SEXP gl_tex_image_2d_(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP);
 extern SEXP gl_tex_parameter_i_(SEXP, SEXP, SEXP);
+extern SEXP gl_use_program_(SEXP);
 extern SEXP gl_vertex_attrib_pointer_(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP);
 extern SEXP glad_load_gl_();
 extern SEXP glfw_create_window_(SEXP, SEXP, SEXP);
@@ -75,6 +76,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"gl_shader_source_",                   (DL_FUNC) &gl_shader_source_,                   4},
     {"gl_tex_image_2d_",                    (DL_FUNC) &gl_tex_image_2d_,                    9},
     {"gl_tex_parameter_i_",                 (DL_FUNC) &gl_tex_parameter_i_,                 3},
+    {"gl_use_program_",                     (DL_FUNC) &gl_use_program_,                     1},
     {"gl_vertex_attrib_pointer_",           (DL_FUNC) &gl_vertex_attrib_pointer_,           6},
     {"glad_load_gl_",                       (DL_FUNC) &glad_load_gl_,                       0},
     {"glfw_create_window_",                 (DL_FUNC) &glfw_create_window_,                 3},

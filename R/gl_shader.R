@@ -58,3 +58,8 @@ gl_get_program_iv <- function(program, pname) {
 gl_get_program_info_log <- function(program) {
   .Call(gl_get_program_info_log_, program)
 }
+
+#' @export
+gl_use_program <- function(program) {
+  .Call(gl_use_program_, program)
+}
