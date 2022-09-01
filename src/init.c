@@ -16,13 +16,17 @@ extern SEXP gl_clear_color_(SEXP, SEXP, SEXP, SEXP);
 extern SEXP gl_compile_shader_(SEXP);
 extern SEXP gl_create_program_();
 extern SEXP gl_create_shader_(SEXP);
+extern SEXP gl_delete_buffers_(SEXP);
+extern SEXP gl_delete_program_(SEXP);
 extern SEXP gl_delete_shader_(SEXP);
+extern SEXP gl_delete_vertex_arrays_(SEXP);
 extern SEXP gl_draw_arrays_(SEXP, SEXP, SEXP);
 extern SEXP gl_draw_elements_(SEXP, SEXP, SEXP, SEXP);
 extern SEXP gl_enable_vertex_attrib_array_(SEXP);
 extern SEXP gl_gen_buffers_(SEXP);
 extern SEXP gl_gen_textures_(SEXP);
 extern SEXP gl_gen_vertex_arrays_(SEXP);
+extern SEXP gl_generate_mipmap_(SEXP);
 extern SEXP gl_get_program_info_log_(SEXP);
 extern SEXP gl_get_program_iv_(SEXP, SEXP);
 extern SEXP gl_get_shader_info_log_(SEXP);
@@ -66,13 +70,17 @@ static const R_CallMethodDef CallEntries[] = {
     {"gl_compile_shader_",                  (DL_FUNC) &gl_compile_shader_,                  1},
     {"gl_create_program_",                  (DL_FUNC) &gl_create_program_,                  0},
     {"gl_create_shader_",                   (DL_FUNC) &gl_create_shader_,                   1},
+    {"gl_delete_buffers_",                  (DL_FUNC) &gl_delete_buffers_,                  1},
+    {"gl_delete_program_",                  (DL_FUNC) &gl_delete_program_,                  1},
     {"gl_delete_shader_",                   (DL_FUNC) &gl_delete_shader_,                   1},
+    {"gl_delete_vertex_arrays_",            (DL_FUNC) &gl_delete_vertex_arrays_,            1},
     {"gl_draw_arrays_",                     (DL_FUNC) &gl_draw_arrays_,                     3},
     {"gl_draw_elements_",                   (DL_FUNC) &gl_draw_elements_,                   4},
     {"gl_enable_vertex_attrib_array_",      (DL_FUNC) &gl_enable_vertex_attrib_array_,      1},
     {"gl_gen_buffers_",                     (DL_FUNC) &gl_gen_buffers_,                     1},
     {"gl_gen_textures_",                    (DL_FUNC) &gl_gen_textures_,                    1},
     {"gl_gen_vertex_arrays_",               (DL_FUNC) &gl_gen_vertex_arrays_,               1},
+    {"gl_generate_mipmap_",                 (DL_FUNC) &gl_generate_mipmap_,                 1},
     {"gl_get_program_info_log_",            (DL_FUNC) &gl_get_program_info_log_,            1},
     {"gl_get_program_iv_",                  (DL_FUNC) &gl_get_program_iv_,                  2},
     {"gl_get_shader_info_log_",             (DL_FUNC) &gl_get_shader_info_log_,             1},
