@@ -37,3 +37,8 @@ gl_tex_image_2d <- function(target,
     data
   )
 }
+
+#' @export
+gl_generate_mipmap <- function(target) {
+  .Call(gl_generate_mipmap_, target)
+}

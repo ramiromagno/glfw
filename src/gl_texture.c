@@ -51,7 +51,7 @@ SEXP gl_tex_image_2d_(SEXP target,
 
   GLenum _target = (GLenum) INTEGER(target)[0];
   GLint _level = (GLint) INTEGER(level)[0];
-  GLint _internalformat = (GLint) INTEGER(internalformat);
+  GLint _internalformat = (GLint) INTEGER(internalformat)[0];
   GLsizei _width = (GLsizei) INTEGER(width)[0];
   GLsizei _height = (GLsizei) INTEGER(height)[0];
   GLint _border = (GLint) INTEGER(border)[0];
@@ -70,8 +70,13 @@ SEXP gl_tex_image_2d_(SEXP target,
     _data = REAL(data);
     break;
   }
+  case RAWSXP:
+  {
+    _data = RAW(data);
+    break;
+  }
   default:
-    Rf_error("`data` must be an integer or double vector.");
+    Rf_error("`data` must be an integer, double or raw vector.");
   }
 
   glTexImage2D(_target,
@@ -84,5 +89,10 @@ SEXP gl_tex_image_2d_(SEXP target,
                _type,
                _data);
 
+  return R_NilValue;
+}
+
+SEXP gl_generate_mipmap_(SEXP target) {
+  glGenerateMipmap((GLenum) INTEGER(target)[0]);
   return R_NilValue;
 }
