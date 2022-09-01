@@ -129,3 +129,8 @@ SEXP gl_use_program_(SEXP program) {
   glUseProgram((GLuint) INTEGER(program)[0]);
   return R_NilValue;
 }
+
+SEXP gl_delete_program_(SEXP program) {
+  glDeleteProgram((GLuint) INTEGER(program)[0]);
+  return R_NilValue;
+}

@@ -63,3 +63,8 @@ gl_get_program_info_log <- function(program) {
 gl_use_program <- function(program) {
   .Call(gl_use_program_, program)
 }
+
+#' @export
+gl_delete_program <- function(program) {
+  .Call(gl_delete_program_, program)
+}
