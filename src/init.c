@@ -45,6 +45,7 @@ extern SEXP glfw_create_window_(SEXP, SEXP, SEXP);
 extern SEXP glfw_destroy_window_(SEXP);
 extern SEXP glfw_get_error_();
 extern SEXP glfw_get_key_(SEXP, SEXP);
+extern SEXP glfw_get_time_();
 extern SEXP glfw_get_version_();
 extern SEXP glfw_get_version_string_();
 extern SEXP glfw_get_window_size_(SEXP);
@@ -53,6 +54,7 @@ extern SEXP glfw_make_context_current_(SEXP);
 extern SEXP glfw_poll_events_();
 extern SEXP glfw_set_error_callback_(SEXP);
 extern SEXP glfw_set_framebuffer_size_callback_(SEXP, SEXP);
+extern SEXP glfw_set_time_(SEXP);
 extern SEXP glfw_set_window_should_close_(SEXP, SEXP);
 extern SEXP glfw_swap_buffers_(SEXP);
 extern SEXP glfw_terminate_();
@@ -99,6 +101,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"glfw_destroy_window_",                (DL_FUNC) &glfw_destroy_window_,                1},
     {"glfw_get_error_",                     (DL_FUNC) &glfw_get_error_,                     0},
     {"glfw_get_key_",                       (DL_FUNC) &glfw_get_key_,                       2},
+    {"glfw_get_time_",                      (DL_FUNC) &glfw_get_time_,                      0},
     {"glfw_get_version_",                   (DL_FUNC) &glfw_get_version_,                   0},
     {"glfw_get_version_string_",            (DL_FUNC) &glfw_get_version_string_,            0},
     {"glfw_get_window_size_",               (DL_FUNC) &glfw_get_window_size_,               1},
@@ -107,6 +110,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"glfw_poll_events_",                   (DL_FUNC) &glfw_poll_events_,                   0},
     {"glfw_set_error_callback_",            (DL_FUNC) &glfw_set_error_callback_,            1},
     {"glfw_set_framebuffer_size_callback_", (DL_FUNC) &glfw_set_framebuffer_size_callback_, 2},
+    {"glfw_set_time_",                      (DL_FUNC) &glfw_set_time_,                      1},
     {"glfw_set_window_should_close_",       (DL_FUNC) &glfw_set_window_should_close_,       2},
     {"glfw_swap_buffers_",                  (DL_FUNC) &glfw_swap_buffers_,                  1},
     {"glfw_terminate_",                     (DL_FUNC) &glfw_terminate_,                     0},
