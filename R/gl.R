@@ -19,3 +19,13 @@ gl_clear_color <- function(red, green, blue, alpha) {
 
   .Call(gl_clear_color_, red, green, blue, alpha)
 }
+
+#' @export
+gl_viewport <- function(x, y, width, height) {
+  .Call(gl_viewport_, x, y, width, height)
+}
+
+#' @export
+gl_polygon_mode <- function(face, mode) {
+  .Call(gl_polygon_mode_, face, mode)
+}

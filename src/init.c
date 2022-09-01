@@ -17,6 +17,8 @@ extern SEXP gl_compile_shader_(SEXP);
 extern SEXP gl_create_program_();
 extern SEXP gl_create_shader_(SEXP);
 extern SEXP gl_delete_shader_(SEXP);
+extern SEXP gl_draw_arrays_(SEXP, SEXP, SEXP);
+extern SEXP gl_draw_elements_(SEXP, SEXP, SEXP, SEXP);
 extern SEXP gl_enable_vertex_attrib_array_(SEXP);
 extern SEXP gl_gen_buffers_(SEXP);
 extern SEXP gl_gen_textures_(SEXP);
@@ -27,11 +29,13 @@ extern SEXP gl_get_shader_info_log_(SEXP);
 extern SEXP gl_get_shader_iv_(SEXP, SEXP);
 extern SEXP gl_is_shader_(SEXP);
 extern SEXP gl_link_program_(SEXP);
+extern SEXP gl_polygon_mode_(SEXP, SEXP);
 extern SEXP gl_shader_source_(SEXP, SEXP, SEXP, SEXP);
 extern SEXP gl_tex_image_2d_(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP);
 extern SEXP gl_tex_parameter_i_(SEXP, SEXP, SEXP);
 extern SEXP gl_use_program_(SEXP);
 extern SEXP gl_vertex_attrib_pointer_(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP);
+extern SEXP gl_viewport_(SEXP, SEXP, SEXP, SEXP);
 extern SEXP glad_load_gl_();
 extern SEXP glfw_create_window_(SEXP, SEXP, SEXP);
 extern SEXP glfw_destroy_window_(SEXP);
@@ -63,6 +67,8 @@ static const R_CallMethodDef CallEntries[] = {
     {"gl_create_program_",                  (DL_FUNC) &gl_create_program_,                  0},
     {"gl_create_shader_",                   (DL_FUNC) &gl_create_shader_,                   1},
     {"gl_delete_shader_",                   (DL_FUNC) &gl_delete_shader_,                   1},
+    {"gl_draw_arrays_",                     (DL_FUNC) &gl_draw_arrays_,                     3},
+    {"gl_draw_elements_",                   (DL_FUNC) &gl_draw_elements_,                   4},
     {"gl_enable_vertex_attrib_array_",      (DL_FUNC) &gl_enable_vertex_attrib_array_,      1},
     {"gl_gen_buffers_",                     (DL_FUNC) &gl_gen_buffers_,                     1},
     {"gl_gen_textures_",                    (DL_FUNC) &gl_gen_textures_,                    1},
@@ -73,11 +79,13 @@ static const R_CallMethodDef CallEntries[] = {
     {"gl_get_shader_iv_",                   (DL_FUNC) &gl_get_shader_iv_,                   2},
     {"gl_is_shader_",                       (DL_FUNC) &gl_is_shader_,                       1},
     {"gl_link_program_",                    (DL_FUNC) &gl_link_program_,                    1},
+    {"gl_polygon_mode_",                    (DL_FUNC) &gl_polygon_mode_,                    2},
     {"gl_shader_source_",                   (DL_FUNC) &gl_shader_source_,                   4},
     {"gl_tex_image_2d_",                    (DL_FUNC) &gl_tex_image_2d_,                    9},
     {"gl_tex_parameter_i_",                 (DL_FUNC) &gl_tex_parameter_i_,                 3},
     {"gl_use_program_",                     (DL_FUNC) &gl_use_program_,                     1},
     {"gl_vertex_attrib_pointer_",           (DL_FUNC) &gl_vertex_attrib_pointer_,           6},
+    {"gl_viewport_",                        (DL_FUNC) &gl_viewport_,                        4},
     {"glad_load_gl_",                       (DL_FUNC) &glad_load_gl_,                       0},
     {"glfw_create_window_",                 (DL_FUNC) &glfw_create_window_,                 3},
     {"glfw_destroy_window_",                (DL_FUNC) &glfw_destroy_window_,                1},
