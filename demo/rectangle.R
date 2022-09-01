@@ -156,8 +156,12 @@ while (!glfw_window_should_close(window))
   glfw_poll_events()
 }
 
-# optional: de-allocate all resources once they've outlived their purpose
-# TODO
+# De-allocate all resources once they've outlived their purpose
+# `glfw_terminate()` would wrap up anyway...
+gl_delete_vertex_arrays(vao)
+gl_delete_buffers(vbo)
+gl_delete_buffers(ebo)
+gl_delete_program(shader_program)
 
 # Close the window
 glfw_destroy_window(window)
