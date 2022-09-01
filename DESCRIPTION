@@ -21,3 +21,5 @@ Roxygen: list(markdown = TRUE)
 SystemRequirements: glfw: glfw-x11 (archlinux), libglfw3-dev (deb), glfw-devel (rpm)
 Depends: 
     R (>= 2.10)
+Suggests: 
+    magick
