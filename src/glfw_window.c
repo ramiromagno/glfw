@@ -8,21 +8,26 @@ static void window_finalizer_(SEXP ext) {
 
 SEXP glfw_create_window_(SEXP width, SEXP height, SEXP title) {
 
-  GLFWwindow* window =
+  GLFWwindow* _window =
     glfwCreateWindow(Rf_asInteger(width), Rf_asInteger(height), CHAR(STRING_ELT(title, 0)), NULL, NULL);
 
-  if (!window)
+  if (!_window)
   {
     const char msg[] = "Window creation failed!\n";
     Rf_error(msg);
     return(R_NilValue); // To eliminate compiler warnings about non-void functions that don't return.
   }
 
-  SEXP ext = PROTECT(R_MakeExternalPtr(window, R_NilValue, R_NilValue));
-  R_RegisterCFinalizer(ext, window_finalizer_);
+  // The tag object associated with the external pointer.
+  SEXP class = PROTECT(Rf_mkString("glfw_window"));
+  SEXP window = PROTECT(R_MakeExternalPtr(_window, R_NilValue, R_NilValue));
+  // assign the attribute class to the external pointer
+  Rf_classgets(window, class);
 
-  UNPROTECT(1);
-  return ext;
+  R_RegisterCFinalizer(window, window_finalizer_);
+
+  UNPROTECT(2);
+  return window;
 
 }
 
