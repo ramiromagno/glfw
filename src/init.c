@@ -31,12 +31,16 @@ extern SEXP gl_get_program_info_log_(SEXP);
 extern SEXP gl_get_program_iv_(SEXP, SEXP);
 extern SEXP gl_get_shader_info_log_(SEXP);
 extern SEXP gl_get_shader_iv_(SEXP, SEXP);
+extern SEXP gl_get_uniform_location_(SEXP, SEXP);
 extern SEXP gl_is_shader_(SEXP);
 extern SEXP gl_link_program_(SEXP);
 extern SEXP gl_polygon_mode_(SEXP, SEXP);
 extern SEXP gl_shader_source_(SEXP, SEXP, SEXP, SEXP);
 extern SEXP gl_tex_image_2d_(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP);
 extern SEXP gl_tex_parameter_i_(SEXP, SEXP, SEXP);
+extern SEXP gl_uniform_f_(SEXP, SEXP);
+extern SEXP gl_uniform_i_(SEXP, SEXP);
+extern SEXP gl_uniform_ui_(SEXP, SEXP);
 extern SEXP gl_use_program_(SEXP);
 extern SEXP gl_vertex_attrib_pointer_(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP);
 extern SEXP gl_viewport_(SEXP, SEXP, SEXP, SEXP);
@@ -89,12 +93,16 @@ static const R_CallMethodDef CallEntries[] = {
     {"gl_get_program_iv_",                  (DL_FUNC) &gl_get_program_iv_,                  2},
     {"gl_get_shader_info_log_",             (DL_FUNC) &gl_get_shader_info_log_,             1},
     {"gl_get_shader_iv_",                   (DL_FUNC) &gl_get_shader_iv_,                   2},
+    {"gl_get_uniform_location_",            (DL_FUNC) &gl_get_uniform_location_,            2},
     {"gl_is_shader_",                       (DL_FUNC) &gl_is_shader_,                       1},
     {"gl_link_program_",                    (DL_FUNC) &gl_link_program_,                    1},
     {"gl_polygon_mode_",                    (DL_FUNC) &gl_polygon_mode_,                    2},
     {"gl_shader_source_",                   (DL_FUNC) &gl_shader_source_,                   4},
     {"gl_tex_image_2d_",                    (DL_FUNC) &gl_tex_image_2d_,                    9},
     {"gl_tex_parameter_i_",                 (DL_FUNC) &gl_tex_parameter_i_,                 3},
+    {"gl_uniform_f_",                       (DL_FUNC) &gl_uniform_f_,                       2},
+    {"gl_uniform_i_",                       (DL_FUNC) &gl_uniform_i_,                       2},
+    {"gl_uniform_ui_",                      (DL_FUNC) &gl_uniform_ui_,                      2},
     {"gl_use_program_",                     (DL_FUNC) &gl_use_program_,                     1},
     {"gl_vertex_attrib_pointer_",           (DL_FUNC) &gl_vertex_attrib_pointer_,           6},
     {"gl_viewport_",                        (DL_FUNC) &gl_viewport_,                        4},
