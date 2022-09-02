@@ -19,3 +19,7 @@ Then you need to use `attribute_visible` in conjunction with your C function def
       "glfw_get_version_" not resolved from current namespace (glfw)
 
 See [rlang-types.h](https://github.com/r-lib/rlang/blob/main/src/rlang/rlang-types.h) for a nice , tidy approach.
+
+### Not finding a C function during compilation
+
+Make sure you have not inadvertently placed a C file in the R/ folder, instead of src/.
