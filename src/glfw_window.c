@@ -127,3 +127,20 @@ SEXP glfw_window_hint_(SEXP hint, SEXP value) {
   glfwWindowHint((unsigned int)INTEGER(hint)[0], INTEGER(value)[0]);
   return R_NilValue;
 }
+
+SEXP glfw_set_window_aspect_ratio_(SEXP window, SEXP numer, SEXP denom) {
+
+  if (R_ExternalPtrAddr(window) == NULL) {
+    const char msg[] = "Window pointer is nil!\n";
+    Rf_error(msg);
+    return(R_NilValue);
+  }
+
+  glfwSetWindowAspectRatio(
+    (GLFWwindow *) R_ExternalPtrAddr(window),
+    (int) INTEGER(numer)[0],
+    (int) INTEGER(denom)[0]
+  );
+
+  return R_NilValue;
+}

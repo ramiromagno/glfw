@@ -38,3 +38,8 @@ glfw_poll_events <- function() {
 glfw_window_hint <- function(target, hint) {
   .Call(glfw_window_hint_, target, hint)
 }
+
+#' @export
+glfw_set_window_aspect_ratio <- function(window, numer, denom) {
+  .Call(glfw_set_window_aspect_ratio_, window, numer, denom)
+}
