@@ -14,6 +14,11 @@ glfw_get_window_size <- function(window) {
 }
 
 #' @export
+glfw_set_window_size <- function(window, width, height) {
+  .Call(glfw_set_window_size_, window, width, height)
+}
+
+#' @export
 glfw_set_framebuffer_size_callback <- function(window, cbfun) {
   .Call(glfw_set_framebuffer_size_callback_, window, cbfun)
 }

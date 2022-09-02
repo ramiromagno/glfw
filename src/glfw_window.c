@@ -59,6 +59,23 @@ SEXP glfw_get_window_size_(SEXP window) {
   return x;
 }
 
+SEXP glfw_set_window_size_(SEXP window, SEXP width, SEXP height) {
+
+  if (R_ExternalPtrAddr(window) == NULL) {
+    const char msg[] = "Window pointer is nil!\n";
+    Rf_error(msg);
+    return(R_NilValue);
+  }
+
+  glfwSetWindowSize(
+    (GLFWwindow *) R_ExternalPtrAddr(window),
+    (int) INTEGER(width)[0],
+    (int) INTEGER(height)[0]
+  );
+
+  return R_NilValue;
+}
+
 // Global variable to hold the R function (closure) to be used as
 // framebuffer buffer size (fbs) callback.
 static SEXP r_fbs_callback;
