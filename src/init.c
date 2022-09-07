@@ -20,8 +20,10 @@ extern SEXP gl_delete_buffers_(SEXP);
 extern SEXP gl_delete_program_(SEXP);
 extern SEXP gl_delete_shader_(SEXP);
 extern SEXP gl_delete_vertex_arrays_(SEXP);
+extern SEXP gl_disable_(SEXP);
 extern SEXP gl_draw_arrays_(SEXP, SEXP, SEXP);
 extern SEXP gl_draw_elements_(SEXP, SEXP, SEXP, SEXP);
+extern SEXP gl_enable_(SEXP);
 extern SEXP gl_enable_vertex_attrib_array_(SEXP);
 extern SEXP gl_gen_buffers_(SEXP);
 extern SEXP gl_gen_textures_(SEXP);
@@ -82,8 +84,10 @@ static const R_CallMethodDef CallEntries[] = {
     {"gl_delete_program_",                  (DL_FUNC) &gl_delete_program_,                  1},
     {"gl_delete_shader_",                   (DL_FUNC) &gl_delete_shader_,                   1},
     {"gl_delete_vertex_arrays_",            (DL_FUNC) &gl_delete_vertex_arrays_,            1},
+    {"gl_disable_",                         (DL_FUNC) &gl_disable_,                         1},
     {"gl_draw_arrays_",                     (DL_FUNC) &gl_draw_arrays_,                     3},
     {"gl_draw_elements_",                   (DL_FUNC) &gl_draw_elements_,                   4},
+    {"gl_enable_",                          (DL_FUNC) &gl_enable_,                          1},
     {"gl_enable_vertex_attrib_array_",      (DL_FUNC) &gl_enable_vertex_attrib_array_,      1},
     {"gl_gen_buffers_",                     (DL_FUNC) &gl_gen_buffers_,                     1},
     {"gl_gen_textures_",                    (DL_FUNC) &gl_gen_textures_,                    1},
