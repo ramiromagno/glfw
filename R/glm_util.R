@@ -12,9 +12,15 @@ glm_rad <- function(deg) {
 }
 
 #' @export
+glm_radians <- glm_rad
+
+#' @export
 glm_deg <- function(rad) {
   rad * 180 / pi
 }
+
+#' @export
+glm_degrees <- glm_deg
 
 #' @export
 glm_min <- function(a, b) {
