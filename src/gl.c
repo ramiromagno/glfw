@@ -35,3 +35,13 @@ SEXP gl_polygon_mode_(SEXP face, SEXP mode) {
   glPolygonMode((GLenum) INTEGER(face)[0], (GLenum) INTEGER(mode)[0]);
   return R_NilValue;
 }
+
+SEXP gl_enable_(SEXP cap) {
+  glEnable((GLenum) INTEGER(cap)[0]);
+  return R_NilValue;
+}
+
+SEXP gl_disable_(SEXP cap) {
+  glDisable((GLenum) INTEGER(cap)[0]);
+  return R_NilValue;
+}

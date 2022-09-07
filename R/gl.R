@@ -29,3 +29,13 @@ gl_viewport <- function(x, y, width, height) {
 gl_polygon_mode <- function(face, mode) {
   .Call(gl_polygon_mode_, face, mode)
 }
+
+#' @export
+gl_enable <- function(cap) {
+  .Call(gl_enable_, cap)
+}
+
+#' @export
+gl_disable <- function(cap) {
+  .Call(gl_disable_, cap)
+}
