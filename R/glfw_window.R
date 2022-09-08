@@ -147,3 +147,8 @@ glfw_wait_events <- function() {
 glfw_wait_events_timeout <- function(timeout) {
   .Call(glfw_wait_events_timeout_, timeout)
 }
+
+#' @export
+glfw_post_empty_event <- function() {
+  .Call(glfw_post_empty_event_)
+}

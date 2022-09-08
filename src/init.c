@@ -69,6 +69,7 @@ extern SEXP glfw_init_();
 extern SEXP glfw_make_context_current_(SEXP);
 extern SEXP glfw_maximize_window_(SEXP);
 extern SEXP glfw_poll_events_();
+extern SEXP glfw_post_empty_event_();
 extern SEXP glfw_request_window_attention_(SEXP);
 extern SEXP glfw_restore_window_(SEXP);
 extern SEXP glfw_set_error_callback_(SEXP);
@@ -153,6 +154,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"glfw_make_context_current_",          (DL_FUNC) &glfw_make_context_current_,          1},
     {"glfw_maximize_window_",               (DL_FUNC) &glfw_maximize_window_,               1},
     {"glfw_poll_events_",                   (DL_FUNC) &glfw_poll_events_,                   0},
+    {"glfw_post_empty_event_",              (DL_FUNC) &glfw_post_empty_event_,              0},
     {"glfw_request_window_attention_",      (DL_FUNC) &glfw_request_window_attention_,      1},
     {"glfw_restore_window_",                (DL_FUNC) &glfw_restore_window_,                1},
     {"glfw_set_error_callback_",            (DL_FUNC) &glfw_set_error_callback_,            1},
