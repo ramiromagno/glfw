@@ -40,8 +40,8 @@ glfw_poll_events <- function() {
 }
 
 #' @export
-glfw_window_hint <- function(target, hint) {
-  .Call(glfw_window_hint_, target, hint)
+glfw_window_hint <- function(hint, value) {
+  .Call(glfw_window_hint_, hint, value)
 }
 
 #' @export
