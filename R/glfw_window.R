@@ -137,3 +137,8 @@ glfw_get_window_attrib <- function(window, attrib) {
 glfw_set_window_attrib <- function(window, attrib, value) {
   .Call(glfw_set_window_attrib_, window, attrib, value)
 }
+
+#' @export
+glfw_wait_events <- function() {
+  .Call(glfw_wait_events_)
+}

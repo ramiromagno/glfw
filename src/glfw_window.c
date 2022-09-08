@@ -295,3 +295,8 @@ SEXP glfw_set_window_attrib_(SEXP window, SEXP attrib, SEXP value) {
                       (int) INTEGER(value)[0]);
   return R_NilValue;
 }
+
+SEXP glfw_wait_events_(void) {
+  glfwWaitEvents();
+  return R_NilValue;
+}
