@@ -36,3 +36,12 @@ glm_translate <- function(m, v) {
   m
 }
 
+#' @export
+glm_scale <- function(m, v) {
+
+  m[, 1] <- m[, 1] * v[1]
+  m[, 2] <- m[, 2] * v[2]
+  m[, 3] <- m[, 3] * v[3]
+
+  m
+}
