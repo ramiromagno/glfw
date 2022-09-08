@@ -93,3 +93,17 @@ SEXP gl_uniform_ui_(SEXP location, SEXP value) {
 
   return R_NilValue;
 }
+
+SEXP gl_uniform_matrix4_f_(SEXP location, SEXP transpose, SEXP value) {
+
+  GLint _location = INTEGER(location)[0];
+  R_len_t _n = XLENGTH(value);
+  GLsizei _count = _n / 4; // number of 4x4 matrices.
+  float *_ptr = (float *) R_alloc(_n, sizeof(float));
+  for (R_xlen_t i = 0; i < _n; i++) _ptr[i] = (float) REAL(value)[i];
+
+  glUniformMatrix4fv(_location, _count, (GLboolean) INTEGER(transpose)[0], _ptr);
+
+  return R_NilValue;
+
+}

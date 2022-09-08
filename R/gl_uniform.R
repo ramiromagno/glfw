@@ -17,3 +17,8 @@ gl_uniform_i <- function(location, value) {
 gl_uniform_ui <- function(location, value) {
   .Call(gl_uniform_ui_, location, value)
 }
+
+#' @export
+gl_uniform_matrix4_f <- function(location, transpose, value) {
+  .Call(gl_uniform_matrix4_f_, location, transpose, value)
+}
