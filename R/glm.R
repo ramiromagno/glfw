@@ -30,3 +30,7 @@ glm_dot <- function(x, y) {
   sum(x * y)
 }
 
+glm_translate <- function(m, v) {
+  m[, 4] <- m[, 1] * v[1] + m[, 2] * v[2] + m[, 3] * v[3] + m[, 4]
+  m
+}
