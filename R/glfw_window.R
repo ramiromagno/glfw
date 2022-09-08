@@ -142,3 +142,8 @@ glfw_set_window_attrib <- function(window, attrib, value) {
 glfw_wait_events <- function() {
   .Call(glfw_wait_events_)
 }
+
+#' @export
+glfw_wait_events_timeout <- function(timeout) {
+  .Call(glfw_wait_events_timeout_, timeout)
+}

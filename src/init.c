@@ -84,6 +84,7 @@ extern SEXP glfw_show_window_(SEXP);
 extern SEXP glfw_swap_buffers_(SEXP);
 extern SEXP glfw_terminate_();
 extern SEXP glfw_wait_events_();
+extern SEXP glfw_wait_events_timeout_(SEXP);
 extern SEXP glfw_window_hint_(SEXP, SEXP);
 extern SEXP glfw_window_hint_string_(SEXP, SEXP);
 extern SEXP glfw_window_should_close_(SEXP);
@@ -167,6 +168,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"glfw_swap_buffers_",                  (DL_FUNC) &glfw_swap_buffers_,                  1},
     {"glfw_terminate_",                     (DL_FUNC) &glfw_terminate_,                     0},
     {"glfw_wait_events_",                   (DL_FUNC) &glfw_wait_events_,                   0},
+    {"glfw_wait_events_timeout_",           (DL_FUNC) &glfw_wait_events_timeout_,           1},
     {"glfw_window_hint_",                   (DL_FUNC) &glfw_window_hint_,                   2},
     {"glfw_window_hint_string_",            (DL_FUNC) &glfw_window_hint_string_,            2},
     {"glfw_window_should_close_",           (DL_FUNC) &glfw_window_should_close_,           1},
