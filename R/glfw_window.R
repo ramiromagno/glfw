@@ -72,3 +72,8 @@ glfw_set_window_size_limits <- function(window,
 glfw_get_framebuffer_size <- function(window) {
   .Call(glfw_get_framebuffer_size_, window)
 }
+
+#' @export
+glfw_get_window_frame_size <- function(window) {
+  .Call(glfw_get_window_frame_size_, window)
+}

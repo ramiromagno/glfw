@@ -184,3 +184,27 @@ SEXP glfw_get_framebuffer_size_(SEXP window) {
   UNPROTECT(1);
   return x;
 }
+
+SEXP glfw_get_window_frame_size_(SEXP window) {
+
+  CHECK_GLFW_WINDOW(window);
+
+  int left = NA_INTEGER;
+  int top = NA_INTEGER;
+  int right = NA_INTEGER;
+  int bottom = NA_INTEGER;
+
+  const char *names[] = {"left", "top", "right", "bottom", ""};
+  SEXP x = PROTECT(Rf_mkNamed(INTSXP, names));
+
+  GLFWwindow *ptr = R_ExternalPtrAddr(window);
+  glfwGetWindowFrameSize(ptr, &left, &top, &right, &bottom);
+
+  INTEGER(x)[0] = left;
+  INTEGER(x)[1] = top;
+  INTEGER(x)[2] = right;
+  INTEGER(x)[3] = bottom;
+
+  UNPROTECT(1);
+  return x;
+}

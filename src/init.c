@@ -57,6 +57,7 @@ extern SEXP glfw_get_key_(SEXP, SEXP);
 extern SEXP glfw_get_time_();
 extern SEXP glfw_get_version_();
 extern SEXP glfw_get_version_string_();
+extern SEXP glfw_get_window_frame_size_(SEXP);
 extern SEXP glfw_get_window_size_(SEXP);
 extern SEXP glfw_init_();
 extern SEXP glfw_make_context_current_(SEXP);
@@ -126,6 +127,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"glfw_get_time_",                      (DL_FUNC) &glfw_get_time_,                      0},
     {"glfw_get_version_",                   (DL_FUNC) &glfw_get_version_,                   0},
     {"glfw_get_version_string_",            (DL_FUNC) &glfw_get_version_string_,            0},
+    {"glfw_get_window_frame_size_",         (DL_FUNC) &glfw_get_window_frame_size_,         1},
     {"glfw_get_window_size_",               (DL_FUNC) &glfw_get_window_size_,               1},
     {"glfw_init_",                          (DL_FUNC) &glfw_init_,                          0},
     {"glfw_make_context_current_",          (DL_FUNC) &glfw_make_context_current_,          1},
