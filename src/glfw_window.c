@@ -145,3 +145,23 @@ SEXP glfw_window_hint_string_(SEXP hint, SEXP value) {
   glfwWindowHintString((unsigned int)INTEGER(hint)[0], CHAR(STRING_ELT(value, 0)));
   return R_NilValue;
 }
+
+SEXP glfw_set_window_size_limits_(
+    SEXP window,
+    SEXP min_width,
+    SEXP min_height,
+    SEXP max_width,
+    SEXP max_height) {
+
+  CHECK_GLFW_WINDOW(window);
+
+  glfwSetWindowSizeLimits(
+    (GLFWwindow *) R_ExternalPtrAddr(window),
+    (int) INTEGER(min_width)[0],
+    (int) INTEGER(min_height)[0],
+    (int) INTEGER(max_width)[0],
+    (int) INTEGER(max_height)[0]
+  );
+
+  return R_NilValue;
+}

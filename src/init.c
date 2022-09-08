@@ -66,6 +66,7 @@ extern SEXP glfw_set_time_(SEXP);
 extern SEXP glfw_set_window_aspect_ratio_(SEXP, SEXP, SEXP);
 extern SEXP glfw_set_window_should_close_(SEXP, SEXP);
 extern SEXP glfw_set_window_size_(SEXP, SEXP, SEXP);
+extern SEXP glfw_set_window_size_limits_(SEXP, SEXP, SEXP, SEXP, SEXP);
 extern SEXP glfw_swap_buffers_(SEXP);
 extern SEXP glfw_terminate_();
 extern SEXP glfw_window_hint_(SEXP, SEXP);
@@ -133,6 +134,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"glfw_set_window_aspect_ratio_",       (DL_FUNC) &glfw_set_window_aspect_ratio_,       3},
     {"glfw_set_window_should_close_",       (DL_FUNC) &glfw_set_window_should_close_,       2},
     {"glfw_set_window_size_",               (DL_FUNC) &glfw_set_window_size_,               3},
+    {"glfw_set_window_size_limits_",        (DL_FUNC) &glfw_set_window_size_limits_,        5},
     {"glfw_swap_buffers_",                  (DL_FUNC) &glfw_swap_buffers_,                  1},
     {"glfw_terminate_",                     (DL_FUNC) &glfw_terminate_,                     0},
     {"glfw_window_hint_",                   (DL_FUNC) &glfw_window_hint_,                   2},

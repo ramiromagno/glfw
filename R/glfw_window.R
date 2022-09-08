@@ -53,3 +53,17 @@ glfw_set_window_aspect_ratio <- function(window, numer, denom) {
 glfw_window_hint_string <- function(hint, value) {
   .Call(glfw_window_hint_string_, hint, value)
 }
+
+#' @export
+glfw_set_window_size_limits <- function(window,
+                                        min_width,
+                                        min_height,
+                                        max_width,
+                                        max_height) {
+  .Call(glfw_set_window_size_limits_,
+        window,
+        min_width,
+        min_height,
+        max_width,
+        max_height)
+}
