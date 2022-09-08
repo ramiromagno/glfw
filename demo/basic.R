@@ -3,6 +3,9 @@ library(glfw)
 # Initialize GLFW
 glfw_init()
 
+glfw_window_hint_string(GLFW$X11_CLASS_NAME, "R glfw")
+glfw_window_hint_string(GLFW$X11_INSTANCE_NAME, "r glfw")
+
 # Create a windowed mode window and its OpenGL context
 window = glfw_create_window(640L, 480L, "Hello World")
 
