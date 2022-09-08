@@ -287,3 +287,11 @@ SEXP glfw_get_window_attrib_(SEXP window, SEXP attrib) {
   int value = glfwGetWindowAttrib((GLFWwindow *) R_ExternalPtrAddr(window), (int) INTEGER(attrib)[0]);
   return Rf_ScalarInteger(value);
 }
+
+SEXP glfw_set_window_attrib_(SEXP window, SEXP attrib, SEXP value) {
+  CHECK_GLFW_WINDOW(window);
+  glfwSetWindowAttrib((GLFWwindow *) R_ExternalPtrAddr(window),
+                      (int) INTEGER(attrib)[0],
+                      (int) INTEGER(value)[0]);
+  return R_NilValue;
+}

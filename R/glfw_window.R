@@ -132,3 +132,8 @@ glfw_request_window_attention <- function(window) {
 glfw_get_window_attrib <- function(window, attrib) {
   .Call(glfw_get_window_attrib_, window, attrib)
 }
+
+#' @export
+glfw_set_window_attrib <- function(window, attrib, value) {
+  .Call(glfw_set_window_attrib_, window, attrib, value)
+}
