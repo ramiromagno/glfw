@@ -165,3 +165,22 @@ SEXP glfw_set_window_size_limits_(
 
   return R_NilValue;
 }
+
+SEXP glfw_get_framebuffer_size_(SEXP window) {
+
+  CHECK_GLFW_WINDOW(window);
+
+  int width = NA_INTEGER;
+  int height = NA_INTEGER;
+  const char *names[] = {"width", "height", ""};
+  SEXP x = PROTECT(Rf_mkNamed(INTSXP, names));
+
+  GLFWwindow *ptr = R_ExternalPtrAddr(window);
+  glfwGetFramebufferSize(ptr, &width, &height);
+
+  INTEGER(x)[0] = width;
+  INTEGER(x)[1] = height;
+
+  UNPROTECT(1);
+  return x;
+}

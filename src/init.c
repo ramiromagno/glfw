@@ -52,6 +52,7 @@ extern SEXP glad_load_gl_();
 extern SEXP glfw_create_window_(SEXP, SEXP, SEXP);
 extern SEXP glfw_destroy_window_(SEXP);
 extern SEXP glfw_get_error_();
+extern SEXP glfw_get_framebuffer_size_(SEXP);
 extern SEXP glfw_get_key_(SEXP, SEXP);
 extern SEXP glfw_get_time_();
 extern SEXP glfw_get_version_();
@@ -120,6 +121,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"glfw_create_window_",                 (DL_FUNC) &glfw_create_window_,                 3},
     {"glfw_destroy_window_",                (DL_FUNC) &glfw_destroy_window_,                1},
     {"glfw_get_error_",                     (DL_FUNC) &glfw_get_error_,                     0},
+    {"glfw_get_framebuffer_size_",          (DL_FUNC) &glfw_get_framebuffer_size_,          1},
     {"glfw_get_key_",                       (DL_FUNC) &glfw_get_key_,                       2},
     {"glfw_get_time_",                      (DL_FUNC) &glfw_get_time_,                      0},
     {"glfw_get_version_",                   (DL_FUNC) &glfw_get_version_,                   0},
