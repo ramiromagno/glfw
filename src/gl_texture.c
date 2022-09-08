@@ -96,3 +96,8 @@ SEXP gl_generate_mipmap_(SEXP target) {
   glGenerateMipmap((GLenum) INTEGER(target)[0]);
   return R_NilValue;
 }
+
+SEXP gl_active_texture_(SEXP texture) {
+  glActiveTexture((GLenum) INTEGER(texture)[0]);
+  return R_NilValue;
+}
