@@ -16,4 +16,9 @@
 #include <R.h>
 #include <Rinternals.h>
 
+#define CHECK_GLFW_WINDOW(GLFW_WINDOW) {\
+  if (R_ExternalPtrAddr(GLFW_WINDOW) == NULL) \
+  Rf_error("Window pointer is nil.\n");\
+  }
+
 #endif
