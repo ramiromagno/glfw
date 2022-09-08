@@ -208,3 +208,22 @@ SEXP glfw_get_window_frame_size_(SEXP window) {
   UNPROTECT(1);
   return x;
 }
+
+SEXP glfw_get_window_content_scale_(SEXP window) {
+
+  CHECK_GLFW_WINDOW(window);
+
+  float xscale = NA_INTEGER;
+  float yscale = NA_INTEGER;
+  const char *names[] = {"xscale", "yscale", ""};
+  SEXP x = PROTECT(Rf_mkNamed(REALSXP, names));
+
+  GLFWwindow *ptr = R_ExternalPtrAddr(window);
+  glfwGetWindowContentScale(ptr, &xscale, &yscale);
+
+  REAL(x)[0] = (double) xscale;
+  REAL(x)[1] = (double) yscale;
+
+  UNPROTECT(1);
+  return x;
+}

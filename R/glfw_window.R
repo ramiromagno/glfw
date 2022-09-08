@@ -77,3 +77,8 @@ glfw_get_framebuffer_size <- function(window) {
 glfw_get_window_frame_size <- function(window) {
   .Call(glfw_get_window_frame_size_, window)
 }
+
+#' @export
+glfw_get_window_content_scale <- function(window) {
+  .Call(glfw_get_window_content_scale_, window)
+}
