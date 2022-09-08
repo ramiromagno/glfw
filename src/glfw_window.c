@@ -166,3 +166,9 @@ SEXP glfw_set_window_aspect_ratio_(SEXP window, SEXP numer, SEXP denom) {
 
   return R_NilValue;
 }
+
+SEXP glfw_window_hint_string_(SEXP hint, SEXP value) {
+
+  glfwWindowHintString((unsigned int)INTEGER(hint)[0], CHAR(STRING_ELT(value, 0)));
+  return R_NilValue;
+}

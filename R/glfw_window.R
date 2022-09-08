@@ -48,3 +48,8 @@ glfw_window_hint <- function(hint, value) {
 glfw_set_window_aspect_ratio <- function(window, numer, denom) {
   .Call(glfw_set_window_aspect_ratio_, window, numer, denom)
 }
+
+#' @export
+glfw_window_hint_string <- function(hint, value) {
+  .Call(glfw_window_hint_string_, hint, value)
+}
