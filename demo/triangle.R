@@ -32,6 +32,8 @@ glfw_init()
 glfw_window_hint(GLFW$CONTEXT_VERSION_MAJOR, 3L)
 glfw_window_hint(GLFW$CONTEXT_VERSION_MINOR, 3L)
 glfw_window_hint(GLFW$OPENGL_PROFILE, GLFW$OPENGL_CORE_PROFILE)
+glfw_window_hint_string(GLFW$X11_CLASS_NAME, "R glfw")
+glfw_window_hint_string(GLFW$X11_INSTANCE_NAME, "r glfw")
 
 # Create window and associated OpenGL context
 window = glfw_create_window(width, height, "One triangle")
