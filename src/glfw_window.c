@@ -227,3 +227,57 @@ SEXP glfw_get_window_content_scale_(SEXP window) {
   UNPROTECT(1);
   return x;
 }
+
+SEXP glfw_get_window_opacity_(SEXP window) {
+  CHECK_GLFW_WINDOW(window);
+  float opacity = glfwGetWindowOpacity((GLFWwindow *) R_ExternalPtrAddr(window));
+  return Rf_ScalarReal((double) opacity);
+}
+
+SEXP glfw_set_window_opacity_(SEXP window, SEXP opacity) {
+  CHECK_GLFW_WINDOW(window);
+  glfwSetWindowOpacity((GLFWwindow *) R_ExternalPtrAddr(window), (float) REAL(opacity)[0]);
+  return R_NilValue;
+}
+
+SEXP glfw_iconify_window_(SEXP window) {
+  CHECK_GLFW_WINDOW(window);
+  glfwIconifyWindow((GLFWwindow *) R_ExternalPtrAddr(window));
+  return R_NilValue;
+}
+
+SEXP glfw_restore_window_(SEXP window) {
+  CHECK_GLFW_WINDOW(window);
+  glfwRestoreWindow((GLFWwindow *) R_ExternalPtrAddr(window));
+  return R_NilValue;
+}
+
+SEXP glfw_maximize_window_(SEXP window) {
+  CHECK_GLFW_WINDOW(window);
+  glfwMaximizeWindow((GLFWwindow *) R_ExternalPtrAddr(window));
+  return R_NilValue;
+}
+
+SEXP glfw_show_window_(SEXP window) {
+  CHECK_GLFW_WINDOW(window);
+  glfwShowWindow((GLFWwindow *) R_ExternalPtrAddr(window));
+  return R_NilValue;
+}
+
+SEXP glfw_hide_window_(SEXP window) {
+  CHECK_GLFW_WINDOW(window);
+  glfwHideWindow((GLFWwindow *) R_ExternalPtrAddr(window));
+  return R_NilValue;
+}
+
+SEXP glfw_focus_window_(SEXP window) {
+  CHECK_GLFW_WINDOW(window);
+  glfwFocusWindow((GLFWwindow *) R_ExternalPtrAddr(window));
+  return R_NilValue;
+}
+
+SEXP glfw_request_window_attention_(SEXP window) {
+  CHECK_GLFW_WINDOW(window);
+  glfwRequestWindowAttention((GLFWwindow *) R_ExternalPtrAddr(window));
+  return R_NilValue;
+}

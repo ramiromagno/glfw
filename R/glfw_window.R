@@ -82,3 +82,48 @@ glfw_get_window_frame_size <- function(window) {
 glfw_get_window_content_scale <- function(window) {
   .Call(glfw_get_window_content_scale_, window)
 }
+
+#' @export
+glfw_get_window_opacity <- function(window) {
+  .Call(glfw_get_window_opacity_, window)
+}
+
+#' @export
+glfw_set_window_opacity <- function(window, opacity) {
+  .Call(glfw_set_window_opacity_, window, opacity)
+}
+
+#' @export
+glfw_iconify_window <- function(window) {
+  .Call(glfw_iconify_window_, window)
+}
+
+#' @export
+glfw_restore_window <- function(window) {
+  .Call(glfw_restore_window_, window)
+}
+
+#' @export
+glfw_maximize_window <- function(window) {
+  .Call(glfw_maximize_window_, window)
+}
+
+#' @export
+glfw_show_window <- function(window) {
+  .Call(glfw_show_window_, window)
+}
+
+#' @export
+glfw_hide_window <- function(window) {
+  .Call(glfw_hide_window_, window)
+}
+
+#' @export
+glfw_focus_window <- function(window) {
+  .Call(glfw_focus_window_, window)
+}
+
+#' @export
+glfw_request_window_attention <- function(window) {
+  .Call(glfw_request_window_attention_, window)
+}

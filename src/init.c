@@ -51,6 +51,7 @@ extern SEXP gl_viewport_(SEXP, SEXP, SEXP, SEXP);
 extern SEXP glad_load_gl_();
 extern SEXP glfw_create_window_(SEXP, SEXP, SEXP);
 extern SEXP glfw_destroy_window_(SEXP);
+extern SEXP glfw_focus_window_(SEXP);
 extern SEXP glfw_get_error_();
 extern SEXP glfw_get_framebuffer_size_(SEXP);
 extern SEXP glfw_get_key_(SEXP, SEXP);
@@ -59,17 +60,25 @@ extern SEXP glfw_get_version_();
 extern SEXP glfw_get_version_string_();
 extern SEXP glfw_get_window_content_scale_(SEXP);
 extern SEXP glfw_get_window_frame_size_(SEXP);
+extern SEXP glfw_get_window_opacity_(SEXP);
 extern SEXP glfw_get_window_size_(SEXP);
+extern SEXP glfw_hide_window_(SEXP);
+extern SEXP glfw_iconify_window_(SEXP);
 extern SEXP glfw_init_();
 extern SEXP glfw_make_context_current_(SEXP);
+extern SEXP glfw_maximize_window_(SEXP);
 extern SEXP glfw_poll_events_();
+extern SEXP glfw_request_window_attention_(SEXP);
+extern SEXP glfw_restore_window_(SEXP);
 extern SEXP glfw_set_error_callback_(SEXP);
 extern SEXP glfw_set_framebuffer_size_callback_(SEXP, SEXP);
 extern SEXP glfw_set_time_(SEXP);
 extern SEXP glfw_set_window_aspect_ratio_(SEXP, SEXP, SEXP);
+extern SEXP glfw_set_window_opacity_(SEXP, SEXP);
 extern SEXP glfw_set_window_should_close_(SEXP, SEXP);
 extern SEXP glfw_set_window_size_(SEXP, SEXP, SEXP);
 extern SEXP glfw_set_window_size_limits_(SEXP, SEXP, SEXP, SEXP, SEXP);
+extern SEXP glfw_show_window_(SEXP);
 extern SEXP glfw_swap_buffers_(SEXP);
 extern SEXP glfw_terminate_();
 extern SEXP glfw_window_hint_(SEXP, SEXP);
@@ -122,6 +131,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"glad_load_gl_",                       (DL_FUNC) &glad_load_gl_,                       0},
     {"glfw_create_window_",                 (DL_FUNC) &glfw_create_window_,                 3},
     {"glfw_destroy_window_",                (DL_FUNC) &glfw_destroy_window_,                1},
+    {"glfw_focus_window_",                  (DL_FUNC) &glfw_focus_window_,                  1},
     {"glfw_get_error_",                     (DL_FUNC) &glfw_get_error_,                     0},
     {"glfw_get_framebuffer_size_",          (DL_FUNC) &glfw_get_framebuffer_size_,          1},
     {"glfw_get_key_",                       (DL_FUNC) &glfw_get_key_,                       2},
@@ -130,17 +140,25 @@ static const R_CallMethodDef CallEntries[] = {
     {"glfw_get_version_string_",            (DL_FUNC) &glfw_get_version_string_,            0},
     {"glfw_get_window_content_scale_",      (DL_FUNC) &glfw_get_window_content_scale_,      1},
     {"glfw_get_window_frame_size_",         (DL_FUNC) &glfw_get_window_frame_size_,         1},
+    {"glfw_get_window_opacity_",            (DL_FUNC) &glfw_get_window_opacity_,            1},
     {"glfw_get_window_size_",               (DL_FUNC) &glfw_get_window_size_,               1},
+    {"glfw_hide_window_",                   (DL_FUNC) &glfw_hide_window_,                   1},
+    {"glfw_iconify_window_",                (DL_FUNC) &glfw_iconify_window_,                1},
     {"glfw_init_",                          (DL_FUNC) &glfw_init_,                          0},
     {"glfw_make_context_current_",          (DL_FUNC) &glfw_make_context_current_,          1},
+    {"glfw_maximize_window_",               (DL_FUNC) &glfw_maximize_window_,               1},
     {"glfw_poll_events_",                   (DL_FUNC) &glfw_poll_events_,                   0},
+    {"glfw_request_window_attention_",      (DL_FUNC) &glfw_request_window_attention_,      1},
+    {"glfw_restore_window_",                (DL_FUNC) &glfw_restore_window_,                1},
     {"glfw_set_error_callback_",            (DL_FUNC) &glfw_set_error_callback_,            1},
     {"glfw_set_framebuffer_size_callback_", (DL_FUNC) &glfw_set_framebuffer_size_callback_, 2},
     {"glfw_set_time_",                      (DL_FUNC) &glfw_set_time_,                      1},
     {"glfw_set_window_aspect_ratio_",       (DL_FUNC) &glfw_set_window_aspect_ratio_,       3},
+    {"glfw_set_window_opacity_",            (DL_FUNC) &glfw_set_window_opacity_,            2},
     {"glfw_set_window_should_close_",       (DL_FUNC) &glfw_set_window_should_close_,       2},
     {"glfw_set_window_size_",               (DL_FUNC) &glfw_set_window_size_,               3},
     {"glfw_set_window_size_limits_",        (DL_FUNC) &glfw_set_window_size_limits_,        5},
+    {"glfw_show_window_",                   (DL_FUNC) &glfw_show_window_,                   1},
     {"glfw_swap_buffers_",                  (DL_FUNC) &glfw_swap_buffers_,                  1},
     {"glfw_terminate_",                     (DL_FUNC) &glfw_terminate_,                     0},
     {"glfw_window_hint_",                   (DL_FUNC) &glfw_window_hint_,                   2},
