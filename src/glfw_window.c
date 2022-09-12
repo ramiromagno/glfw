@@ -310,3 +310,9 @@ SEXP glfw_post_empty_event_(void) {
   glfwPostEmptyEvent();
   return R_NilValue;
 }
+
+SEXP glfw_set_window_title_(SEXP window, SEXP title) {
+  CHECK_GLFW_WINDOW(window);
+  glfwSetWindowTitle((GLFWwindow *) R_ExternalPtrAddr(window), CHAR(STRING_ELT(title, 0)));
+  return R_NilValue;
+}

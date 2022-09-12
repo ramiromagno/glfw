@@ -152,3 +152,8 @@ glfw_wait_events_timeout <- function(timeout) {
 glfw_post_empty_event <- function() {
   .Call(glfw_post_empty_event_)
 }
+
+#' @export
+glfw_set_window_title <- function(window, title) {
+  .Call(glfw_set_window_title_, window, title)
+}
