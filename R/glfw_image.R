@@ -4,6 +4,6 @@ glfw_create_image <- function(image_data) {
 }
 
 #' @export
-glfw_destroy_image <- function(image_data) {
-  .Call(glfw_destroy_image_, image_data)
+glfw_destroy_image <- function(image) {
+  .Call(glfw_destroy_image_, image)
 }
