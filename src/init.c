@@ -49,7 +49,9 @@ extern SEXP gl_use_program_(SEXP);
 extern SEXP gl_vertex_attrib_pointer_(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP);
 extern SEXP gl_viewport_(SEXP, SEXP, SEXP, SEXP);
 extern SEXP glad_load_gl_();
+extern SEXP glfw_create_image_(SEXP);
 extern SEXP glfw_create_window_(SEXP, SEXP, SEXP);
+extern SEXP glfw_destroy_image_(SEXP);
 extern SEXP glfw_destroy_window_(SEXP);
 extern SEXP glfw_focus_window_(SEXP);
 extern SEXP glfw_get_error_();
@@ -138,7 +140,9 @@ static const R_CallMethodDef CallEntries[] = {
     {"gl_vertex_attrib_pointer_",           (DL_FUNC) &gl_vertex_attrib_pointer_,           6},
     {"gl_viewport_",                        (DL_FUNC) &gl_viewport_,                        4},
     {"glad_load_gl_",                       (DL_FUNC) &glad_load_gl_,                       0},
+    {"glfw_create_image_",                  (DL_FUNC) &glfw_create_image_,                  1},
     {"glfw_create_window_",                 (DL_FUNC) &glfw_create_window_,                 3},
+    {"glfw_destroy_image_",                 (DL_FUNC) &glfw_destroy_image_,                 1},
     {"glfw_destroy_window_",                (DL_FUNC) &glfw_destroy_window_,                1},
     {"glfw_focus_window_",                  (DL_FUNC) &glfw_focus_window_,                  1},
     {"glfw_get_error_",                     (DL_FUNC) &glfw_get_error_,                     0},
