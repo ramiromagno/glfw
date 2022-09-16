@@ -56,6 +56,7 @@ extern SEXP glfw_destroy_image_(SEXP);
 extern SEXP glfw_destroy_window_(SEXP);
 extern SEXP glfw_focus_window_(SEXP);
 extern SEXP glfw_get_current_context_();
+extern SEXP glfw_get_cursor_pos_(SEXP);
 extern SEXP glfw_get_error_();
 extern SEXP glfw_get_framebuffer_size_(SEXP);
 extern SEXP glfw_get_key_(SEXP, SEXP);
@@ -76,6 +77,7 @@ extern SEXP glfw_poll_events_();
 extern SEXP glfw_post_empty_event_();
 extern SEXP glfw_request_window_attention_(SEXP);
 extern SEXP glfw_restore_window_(SEXP);
+extern SEXP glfw_set_cursor_pos_callback_(SEXP, SEXP);
 extern SEXP glfw_set_error_callback_(SEXP);
 extern SEXP glfw_set_framebuffer_size_callback_(SEXP, SEXP);
 extern SEXP glfw_set_time_(SEXP);
@@ -149,6 +151,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"glfw_destroy_window_",                (DL_FUNC) &glfw_destroy_window_,                1},
     {"glfw_focus_window_",                  (DL_FUNC) &glfw_focus_window_,                  1},
     {"glfw_get_current_context_",           (DL_FUNC) &glfw_get_current_context_,           0},
+    {"glfw_get_cursor_pos_",                (DL_FUNC) &glfw_get_cursor_pos_,                1},
     {"glfw_get_error_",                     (DL_FUNC) &glfw_get_error_,                     0},
     {"glfw_get_framebuffer_size_",          (DL_FUNC) &glfw_get_framebuffer_size_,          1},
     {"glfw_get_key_",                       (DL_FUNC) &glfw_get_key_,                       2},
@@ -169,6 +172,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"glfw_post_empty_event_",              (DL_FUNC) &glfw_post_empty_event_,              0},
     {"glfw_request_window_attention_",      (DL_FUNC) &glfw_request_window_attention_,      1},
     {"glfw_restore_window_",                (DL_FUNC) &glfw_restore_window_,                1},
+    {"glfw_set_cursor_pos_callback_",       (DL_FUNC) &glfw_set_cursor_pos_callback_,       2},
     {"glfw_set_error_callback_",            (DL_FUNC) &glfw_set_error_callback_,            1},
     {"glfw_set_framebuffer_size_callback_", (DL_FUNC) &glfw_set_framebuffer_size_callback_, 2},
     {"glfw_set_time_",                      (DL_FUNC) &glfw_set_time_,                      1},
