@@ -45,3 +45,10 @@ SEXP glfw_get_cursor_pos_(SEXP window) {
   UNPROTECT(1);
   return cursor_pos;
 }
+
+SEXP glfw_set_cursor_pos_(SEXP window, SEXP xpos, SEXP ypos) {
+
+  CHECK_GLFW_WINDOW(window);
+  glfwSetCursorPos((GLFWwindow *) R_ExternalPtrAddr(window), REAL(xpos)[0], REAL(ypos)[0]);
+  return R_NilValue;
+}
