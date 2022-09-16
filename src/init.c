@@ -42,9 +42,10 @@ extern SEXP gl_shader_source_(SEXP, SEXP, SEXP, SEXP);
 extern SEXP gl_tex_image_2d_(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP);
 extern SEXP gl_tex_parameter_i_(SEXP, SEXP, SEXP);
 extern SEXP gl_uniform_f_(SEXP, SEXP);
-extern SEXP gl_uniform_i_(SEXP, SEXP);
-extern SEXP gl_uniform_matrix4_f_(SEXP, SEXP, SEXP);
-extern SEXP gl_uniform_ui_(SEXP, SEXP);
+extern SEXP gl_uniform_fv_(SEXP, SEXP);
+extern SEXP gl_uniform_iv_(SEXP, SEXP);
+extern SEXP gl_uniform_matrix4_fv_(SEXP, SEXP, SEXP);
+extern SEXP gl_uniform_uiv_(SEXP, SEXP);
 extern SEXP gl_use_program_(SEXP);
 extern SEXP gl_vertex_attrib_pointer_(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP);
 extern SEXP gl_viewport_(SEXP, SEXP, SEXP, SEXP);
@@ -54,6 +55,7 @@ extern SEXP glfw_create_window_(SEXP, SEXP, SEXP);
 extern SEXP glfw_destroy_image_(SEXP);
 extern SEXP glfw_destroy_window_(SEXP);
 extern SEXP glfw_focus_window_(SEXP);
+extern SEXP glfw_get_current_context_();
 extern SEXP glfw_get_error_();
 extern SEXP glfw_get_framebuffer_size_(SEXP);
 extern SEXP glfw_get_key_(SEXP, SEXP);
@@ -133,9 +135,10 @@ static const R_CallMethodDef CallEntries[] = {
     {"gl_tex_image_2d_",                    (DL_FUNC) &gl_tex_image_2d_,                    9},
     {"gl_tex_parameter_i_",                 (DL_FUNC) &gl_tex_parameter_i_,                 3},
     {"gl_uniform_f_",                       (DL_FUNC) &gl_uniform_f_,                       2},
-    {"gl_uniform_i_",                       (DL_FUNC) &gl_uniform_i_,                       2},
-    {"gl_uniform_matrix4_f_",               (DL_FUNC) &gl_uniform_matrix4_f_,               3},
-    {"gl_uniform_ui_",                      (DL_FUNC) &gl_uniform_ui_,                      2},
+    {"gl_uniform_fv_",                      (DL_FUNC) &gl_uniform_fv_,                      2},
+    {"gl_uniform_iv_",                      (DL_FUNC) &gl_uniform_iv_,                      2},
+    {"gl_uniform_matrix4_fv_",              (DL_FUNC) &gl_uniform_matrix4_fv_,              3},
+    {"gl_uniform_uiv_",                     (DL_FUNC) &gl_uniform_uiv_,                     2},
     {"gl_use_program_",                     (DL_FUNC) &gl_use_program_,                     1},
     {"gl_vertex_attrib_pointer_",           (DL_FUNC) &gl_vertex_attrib_pointer_,           6},
     {"gl_viewport_",                        (DL_FUNC) &gl_viewport_,                        4},
@@ -145,6 +148,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"glfw_destroy_image_",                 (DL_FUNC) &glfw_destroy_image_,                 1},
     {"glfw_destroy_window_",                (DL_FUNC) &glfw_destroy_window_,                1},
     {"glfw_focus_window_",                  (DL_FUNC) &glfw_focus_window_,                  1},
+    {"glfw_get_current_context_",           (DL_FUNC) &glfw_get_current_context_,           0},
     {"glfw_get_error_",                     (DL_FUNC) &glfw_get_error_,                     0},
     {"glfw_get_framebuffer_size_",          (DL_FUNC) &glfw_get_framebuffer_size_,          1},
     {"glfw_get_key_",                       (DL_FUNC) &glfw_get_key_,                       2},
