@@ -111,7 +111,7 @@ SEXP gl_uniform_uiv_(SEXP location, SEXP value) {
   GLint _location = INTEGER(location)[0];
   R_len_t _n = XLENGTH(value);
   unsigned int *_ptr = (unsigned int *) R_alloc(_n, sizeof(unsigned int));
-  for (R_xlen_t i = 0; i < _n; i++) _ptr[i] = (float) INTEGER(value)[i];
+  for (R_xlen_t i = 0; i < _n; i++) _ptr[i] = (unsigned int) INTEGER(value)[i];
 
   switch(_n) {
   case 1:
