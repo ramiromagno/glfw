@@ -47,6 +47,7 @@ extern SEXP gl_uniform_iv_(SEXP, SEXP);
 extern SEXP gl_uniform_matrix4_fv_(SEXP, SEXP, SEXP);
 extern SEXP gl_uniform_uiv_(SEXP, SEXP);
 extern SEXP gl_use_program_(SEXP);
+extern SEXP gl_validate_program_(SEXP);
 extern SEXP gl_vertex_attrib_pointer_(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP);
 extern SEXP gl_viewport_(SEXP, SEXP, SEXP, SEXP);
 extern SEXP glad_load_gl_();
@@ -143,6 +144,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"gl_uniform_matrix4_fv_",              (DL_FUNC) &gl_uniform_matrix4_fv_,              3},
     {"gl_uniform_uiv_",                     (DL_FUNC) &gl_uniform_uiv_,                     2},
     {"gl_use_program_",                     (DL_FUNC) &gl_use_program_,                     1},
+    {"gl_validate_program_",                (DL_FUNC) &gl_validate_program_,                1},
     {"gl_vertex_attrib_pointer_",           (DL_FUNC) &gl_vertex_attrib_pointer_,           6},
     {"gl_viewport_",                        (DL_FUNC) &gl_viewport_,                        4},
     {"glad_load_gl_",                       (DL_FUNC) &glad_load_gl_,                       0},

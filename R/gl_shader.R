@@ -68,3 +68,8 @@ gl_use_program <- function(program) {
 gl_delete_program <- function(program) {
   .Call(gl_delete_program_, program)
 }
+
+#' @export
+gl_validate_program <- function(program) {
+  .Call(gl_validate_program_, program)
+}
