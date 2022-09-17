@@ -104,6 +104,12 @@ build_program <-
       stop(gl_get_program_info_log(shader_program))
     }
 
+    # Validate shader program
+    gl_validate_program(shader_program)
+    if (!gl_get_program_iv(shader_program, GL$VALIDATE_STATUS)) {
+      stop(gl_get_program_info_log(shader_program))
+    }
+
     # Delete all shaders. They will continue to stay alive until they are no
     # longer referenced.
     # Source: https://stackoverflow.com/questions/24172962/gldeleteshader-is-the-order-irrelevant
