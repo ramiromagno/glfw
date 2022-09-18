@@ -55,6 +55,7 @@ extern SEXP glfw_create_image_(SEXP);
 extern SEXP glfw_create_window_(SEXP, SEXP, SEXP);
 extern SEXP glfw_destroy_image_(SEXP);
 extern SEXP glfw_destroy_window_(SEXP);
+extern SEXP glfw_extension_supported_(SEXP);
 extern SEXP glfw_focus_window_(SEXP);
 extern SEXP glfw_get_current_context_();
 extern SEXP glfw_get_cursor_pos_(SEXP);
@@ -153,6 +154,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"glfw_create_window_",                 (DL_FUNC) &glfw_create_window_,                 3},
     {"glfw_destroy_image_",                 (DL_FUNC) &glfw_destroy_image_,                 1},
     {"glfw_destroy_window_",                (DL_FUNC) &glfw_destroy_window_,                1},
+    {"glfw_extension_supported_",           (DL_FUNC) &glfw_extension_supported_,           1},
     {"glfw_focus_window_",                  (DL_FUNC) &glfw_focus_window_,                  1},
     {"glfw_get_current_context_",           (DL_FUNC) &glfw_get_current_context_,           0},
     {"glfw_get_cursor_pos_",                (DL_FUNC) &glfw_get_cursor_pos_,                1},

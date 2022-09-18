@@ -32,3 +32,7 @@ SEXP glfw_swap_interval_(SEXP interval) {
   glfwSwapInterval(INTEGER(interval)[0]);
   return R_NilValue;
 }
+
+SEXP glfw_extension_supported_(SEXP extension) {
+  return Rf_ScalarInteger(glfwExtensionSupported(CHAR(STRING_ELT(extension, 0))));
+}

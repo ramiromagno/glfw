@@ -17,3 +17,8 @@ glfw_get_current_context <- function() {
 glfw_swap_interval <- function(interval) {
   .Call(glfw_swap_interval_, interval)
 }
+
+#' @export
+glfw_extension_supported <- function(extension) {
+  .Call(glfw_extension_supported_, extension)
+}
