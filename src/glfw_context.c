@@ -27,3 +27,8 @@ SEXP glfw_get_current_context_(void) {
   UNPROTECT(2);
   return window;
 }
+
+SEXP glfw_swap_interval_(SEXP interval) {
+  glfwSwapInterval(INTEGER(interval)[0]);
+  return R_NilValue;
+}

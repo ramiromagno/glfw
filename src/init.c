@@ -92,6 +92,7 @@ extern SEXP glfw_set_window_size_limits_(SEXP, SEXP, SEXP, SEXP, SEXP);
 extern SEXP glfw_set_window_title_(SEXP, SEXP);
 extern SEXP glfw_show_window_(SEXP);
 extern SEXP glfw_swap_buffers_(SEXP);
+extern SEXP glfw_swap_interval_(SEXP);
 extern SEXP glfw_terminate_();
 extern SEXP GLFW_VERSION_MAJOR_();
 extern SEXP GLFW_VERSION_MINOR_();
@@ -189,6 +190,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"glfw_set_window_title_",              (DL_FUNC) &glfw_set_window_title_,              2},
     {"glfw_show_window_",                   (DL_FUNC) &glfw_show_window_,                   1},
     {"glfw_swap_buffers_",                  (DL_FUNC) &glfw_swap_buffers_,                  1},
+    {"glfw_swap_interval_",                 (DL_FUNC) &glfw_swap_interval_,                 1},
     {"glfw_terminate_",                     (DL_FUNC) &glfw_terminate_,                     0},
     {"GLFW_VERSION_MAJOR_",                 (DL_FUNC) &GLFW_VERSION_MAJOR_,                 0},
     {"GLFW_VERSION_MINOR_",                 (DL_FUNC) &GLFW_VERSION_MINOR_,                 0},
