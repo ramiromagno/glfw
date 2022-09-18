@@ -29,3 +29,12 @@ Make sure you have not inadvertently placed a C file in the R/ folder, instead o
 1. Add a C function to a file in src/
 2. Add an R wrapper to a file in R/
 3. Run craftthis::register_compiled_fns()
+
+### Code organization
+
+1. Typically, a src/ file has an accompanying R/ file.
+2. Source files starting with `glfw_` provide the GLFW API which this package is all about.
+3. Source files starting with `glm_` provide the GLM API in R code.
+4. Source files starting with `gl_` provide the OpenGL API.
+5. Source files starting with `r_` provide novel API but that is not GLFW API per se, typically utility functions.
+6. GL and GLFW constants are generated in data-raw/ and exported as datasets.
