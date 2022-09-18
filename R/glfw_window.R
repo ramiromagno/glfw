@@ -134,21 +134,6 @@ glfw_set_window_attrib <- function(window, attrib, value) {
 }
 
 #' @export
-glfw_wait_events <- function() {
-  .Call(glfw_wait_events_)
-}
-
-#' @export
-glfw_wait_events_timeout <- function(timeout) {
-  .Call(glfw_wait_events_timeout_, timeout)
-}
-
-#' @export
-glfw_post_empty_event <- function() {
-  .Call(glfw_post_empty_event_)
-}
-
-#' @export
 glfw_set_window_title <- function(window, title) {
   .Call(glfw_set_window_title_, window, title)
 }

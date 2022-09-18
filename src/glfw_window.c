@@ -291,21 +291,6 @@ SEXP glfw_set_window_attrib_(SEXP window, SEXP attrib, SEXP value) {
   return R_NilValue;
 }
 
-SEXP glfw_wait_events_(void) {
-  glfwWaitEvents();
-  return R_NilValue;
-}
-
-SEXP glfw_wait_events_timeout_(SEXP timeout) {
-  glfwWaitEventsTimeout((double) REAL(timeout)[0]);
-  return R_NilValue;
-}
-
-SEXP glfw_post_empty_event_(void) {
-  glfwPostEmptyEvent();
-  return R_NilValue;
-}
-
 SEXP glfw_set_window_title_(SEXP window, SEXP title) {
   CHECK_GLFW_WINDOW(window);
   glfwSetWindowTitle((GLFWwindow *) R_ExternalPtrAddr(window), CHAR(STRING_ELT(title, 0)));
