@@ -63,6 +63,7 @@ extern SEXP glfw_get_error_();
 extern SEXP glfw_get_framebuffer_size_(SEXP);
 extern SEXP glfw_get_gamma_ramp_(SEXP);
 extern SEXP glfw_get_key_(SEXP, SEXP);
+extern SEXP glfw_get_key_name_(SEXP, SEXP);
 extern SEXP glfw_get_key_scancode_(SEXP);
 extern SEXP glfw_get_monitor_content_scale_(SEXP);
 extern SEXP glfw_get_monitor_name_(SEXP);
@@ -175,6 +176,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"glfw_get_framebuffer_size_",          (DL_FUNC) &glfw_get_framebuffer_size_,          1},
     {"glfw_get_gamma_ramp_",                (DL_FUNC) &glfw_get_gamma_ramp_,                1},
     {"glfw_get_key_",                       (DL_FUNC) &glfw_get_key_,                       2},
+    {"glfw_get_key_name_",                  (DL_FUNC) &glfw_get_key_name_,                  2},
     {"glfw_get_key_scancode_",              (DL_FUNC) &glfw_get_key_scancode_,              1},
     {"glfw_get_monitor_content_scale_",     (DL_FUNC) &glfw_get_monitor_content_scale_,     1},
     {"glfw_get_monitor_name_",              (DL_FUNC) &glfw_get_monitor_name_,              1},

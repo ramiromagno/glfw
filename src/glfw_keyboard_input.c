@@ -51,3 +51,15 @@ SEXP glfw_set_input_mode_(SEXP window, SEXP mode, SEXP value) {
   );
   return R_NilValue;
 }
+
+SEXP glfw_get_key_name_(SEXP key, SEXP scancode) {
+
+  const char *key_name;
+  key_name = glfwGetKeyName(INTEGER(key)[0], INTEGER(scancode)[0]);
+
+  if (key_name == NULL) {
+    return Rf_ScalarString(NA_STRING);
+  } else {
+    return Rf_mkString(key_name);
+  }
+}
