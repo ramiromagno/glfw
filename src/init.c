@@ -93,6 +93,7 @@ extern SEXP glfw_set_cursor_pos_(SEXP, SEXP, SEXP);
 extern SEXP glfw_set_cursor_pos_callback_(SEXP, SEXP);
 extern SEXP glfw_set_error_callback_(SEXP);
 extern SEXP glfw_set_framebuffer_size_callback_(SEXP, SEXP);
+extern SEXP glfw_set_key_callback_(SEXP, SEXP);
 extern SEXP glfw_set_time_(SEXP);
 extern SEXP glfw_set_window_aspect_ratio_(SEXP, SEXP, SEXP);
 extern SEXP glfw_set_window_attrib_(SEXP, SEXP, SEXP);
@@ -202,6 +203,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"glfw_set_cursor_pos_callback_",       (DL_FUNC) &glfw_set_cursor_pos_callback_,       2},
     {"glfw_set_error_callback_",            (DL_FUNC) &glfw_set_error_callback_,            1},
     {"glfw_set_framebuffer_size_callback_", (DL_FUNC) &glfw_set_framebuffer_size_callback_, 2},
+    {"glfw_set_key_callback_",              (DL_FUNC) &glfw_set_key_callback_,              2},
     {"glfw_set_time_",                      (DL_FUNC) &glfw_set_time_,                      1},
     {"glfw_set_window_aspect_ratio_",       (DL_FUNC) &glfw_set_window_aspect_ratio_,       3},
     {"glfw_set_window_attrib_",             (DL_FUNC) &glfw_set_window_attrib_,             3},
