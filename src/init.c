@@ -61,10 +61,20 @@ extern SEXP glfw_get_current_context_();
 extern SEXP glfw_get_cursor_pos_(SEXP);
 extern SEXP glfw_get_error_();
 extern SEXP glfw_get_framebuffer_size_(SEXP);
+extern SEXP glfw_get_gamma_ramp_(SEXP);
 extern SEXP glfw_get_key_(SEXP, SEXP);
+extern SEXP glfw_get_monitor_content_scale_(SEXP);
+extern SEXP glfw_get_monitor_name_(SEXP);
+extern SEXP glfw_get_monitor_physical_size_(SEXP);
+extern SEXP glfw_get_monitor_pos_(SEXP);
+extern SEXP glfw_get_monitor_workarea_(SEXP);
+extern SEXP glfw_get_monitors_();
+extern SEXP glfw_get_primary_monitor_();
 extern SEXP glfw_get_time_();
 extern SEXP glfw_get_version_();
 extern SEXP glfw_get_version_string_();
+extern SEXP glfw_get_video_mode_(SEXP);
+extern SEXP glfw_get_video_modes_(SEXP);
 extern SEXP glfw_get_window_attrib_(SEXP, SEXP);
 extern SEXP glfw_get_window_content_scale_(SEXP);
 extern SEXP glfw_get_window_frame_size_(SEXP);
@@ -160,10 +170,20 @@ static const R_CallMethodDef CallEntries[] = {
     {"glfw_get_cursor_pos_",                (DL_FUNC) &glfw_get_cursor_pos_,                1},
     {"glfw_get_error_",                     (DL_FUNC) &glfw_get_error_,                     0},
     {"glfw_get_framebuffer_size_",          (DL_FUNC) &glfw_get_framebuffer_size_,          1},
+    {"glfw_get_gamma_ramp_",                (DL_FUNC) &glfw_get_gamma_ramp_,                1},
     {"glfw_get_key_",                       (DL_FUNC) &glfw_get_key_,                       2},
+    {"glfw_get_monitor_content_scale_",     (DL_FUNC) &glfw_get_monitor_content_scale_,     1},
+    {"glfw_get_monitor_name_",              (DL_FUNC) &glfw_get_monitor_name_,              1},
+    {"glfw_get_monitor_physical_size_",     (DL_FUNC) &glfw_get_monitor_physical_size_,     1},
+    {"glfw_get_monitor_pos_",               (DL_FUNC) &glfw_get_monitor_pos_,               1},
+    {"glfw_get_monitor_workarea_",          (DL_FUNC) &glfw_get_monitor_workarea_,          1},
+    {"glfw_get_monitors_",                  (DL_FUNC) &glfw_get_monitors_,                  0},
+    {"glfw_get_primary_monitor_",           (DL_FUNC) &glfw_get_primary_monitor_,           0},
     {"glfw_get_time_",                      (DL_FUNC) &glfw_get_time_,                      0},
     {"glfw_get_version_",                   (DL_FUNC) &glfw_get_version_,                   0},
     {"glfw_get_version_string_",            (DL_FUNC) &glfw_get_version_string_,            0},
+    {"glfw_get_video_mode_",                (DL_FUNC) &glfw_get_video_mode_,                1},
+    {"glfw_get_video_modes_",               (DL_FUNC) &glfw_get_video_modes_,               1},
     {"glfw_get_window_attrib_",             (DL_FUNC) &glfw_get_window_attrib_,             2},
     {"glfw_get_window_content_scale_",      (DL_FUNC) &glfw_get_window_content_scale_,      1},
     {"glfw_get_window_frame_size_",         (DL_FUNC) &glfw_get_window_frame_size_,         1},
