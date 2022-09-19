@@ -28,8 +28,7 @@ SEXP glfw_set_key_callback_(SEXP window, SEXP cb) {
   return R_NilValue;
 }
 
-SEXP glfw_get_key_(SEXP window, SEXP key)
-{
+SEXP glfw_get_key_(SEXP window, SEXP key) {
   CHECK_GLFW_WINDOW(window);
 
   // Last state reported for the specified key to the specified window. The
@@ -37,4 +36,8 @@ SEXP glfw_get_key_(SEXP window, SEXP key)
   int state = glfwGetKey((GLFWwindow *) R_ExternalPtrAddr(window), INTEGER(key)[0]);
 
   return Rf_ScalarInteger(state);
+}
+
+SEXP glfw_get_key_scancode_(SEXP key) {
+  return Rf_ScalarInteger(glfwGetKeyScancode(INTEGER(key)[0]));
 }

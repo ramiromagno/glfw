@@ -7,3 +7,8 @@ glfw_set_key_callback <- function(window, cb) {
 glfw_get_key <- function(window, key) {
   .Call(glfw_get_key_, window, key)
 }
+
+#' @export
+glfw_get_key_scancode <- function(key) {
+  .Call(glfw_get_key_scancode_, key)
+}
