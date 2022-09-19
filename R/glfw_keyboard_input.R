@@ -12,3 +12,8 @@ glfw_get_key <- function(window, key) {
 glfw_get_key_scancode <- function(key) {
   .Call(glfw_get_key_scancode_, key)
 }
+
+#' @export
+glfw_set_input_mode <- function(window, mode, value) {
+  .Call(glfw_set_input_mode_, window, mode, value)
+}

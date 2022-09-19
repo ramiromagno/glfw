@@ -41,3 +41,13 @@ SEXP glfw_get_key_(SEXP window, SEXP key) {
 SEXP glfw_get_key_scancode_(SEXP key) {
   return Rf_ScalarInteger(glfwGetKeyScancode(INTEGER(key)[0]));
 }
+
+SEXP glfw_set_input_mode_(SEXP window, SEXP mode, SEXP value) {
+  CHECK_GLFW_WINDOW(window);
+  glfwSetInputMode(
+    (GLFWwindow *) R_ExternalPtrAddr(window),
+    INTEGER(mode)[0],
+    INTEGER(value)[0]
+  );
+  return R_NilValue;
+}
