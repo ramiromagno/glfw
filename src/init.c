@@ -30,6 +30,7 @@ extern SEXP gl_gen_buffers_(SEXP);
 extern SEXP gl_gen_textures_(SEXP);
 extern SEXP gl_gen_vertex_arrays_(SEXP);
 extern SEXP gl_generate_mipmap_(SEXP);
+extern SEXP gl_get_active_uniform_(SEXP, SEXP);
 extern SEXP gl_get_program_info_log_(SEXP);
 extern SEXP gl_get_program_iv_(SEXP, SEXP);
 extern SEXP gl_get_shader_info_log_(SEXP);
@@ -143,6 +144,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"gl_gen_textures_",                    (DL_FUNC) &gl_gen_textures_,                    1},
     {"gl_gen_vertex_arrays_",               (DL_FUNC) &gl_gen_vertex_arrays_,               1},
     {"gl_generate_mipmap_",                 (DL_FUNC) &gl_generate_mipmap_,                 1},
+    {"gl_get_active_uniform_",              (DL_FUNC) &gl_get_active_uniform_,              2},
     {"gl_get_program_info_log_",            (DL_FUNC) &gl_get_program_info_log_,            1},
     {"gl_get_program_iv_",                  (DL_FUNC) &gl_get_program_iv_,                  2},
     {"gl_get_shader_info_log_",             (DL_FUNC) &gl_get_shader_info_log_,             1},

@@ -147,3 +147,33 @@ SEXP gl_uniform_matrix4_fv_(SEXP location, SEXP transpose, SEXP value) {
   return R_NilValue;
 
 }
+
+SEXP gl_get_active_uniform_(SEXP program, SEXP index) {
+  int name_len = -1;
+  int size = -1;
+  GLenum type = GL_ZERO;
+  char name[100];
+
+  glGetActiveUniform(
+    (GLuint) INTEGER(program)[0],
+    (GLuint) INTEGER(index)[0],
+    sizeof(name) - 1,
+    &name_len,
+    &size,
+    &type,
+    name);
+
+  name[name_len] = 0;
+
+  const char *names[] = {"index", "size", "type", "name", ""};
+  SEXP info = PROTECT(Rf_mkNamed(VECSXP, names));
+
+  SET_VECTOR_ELT(info, 0, index);
+  SET_VECTOR_ELT(info, 1, Rf_ScalarInteger(size));
+  SET_VECTOR_ELT(info, 2, Rf_ScalarInteger(type));
+  SET_VECTOR_ELT(info, 3, Rf_mkString(name));
+
+  UNPROTECT(1);
+  return info;
+
+}

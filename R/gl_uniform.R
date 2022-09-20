@@ -27,3 +27,8 @@ gl_uniform_uiv <- function(location, value) {
 gl_uniform_matrix4_fv <- function(location, transpose, value) {
   .Call(gl_uniform_matrix4_fv_, location, transpose, value)
 }
+
+#' @export
+gl_get_active_uniform <- function(program, index) {
+  .Call(gl_get_active_uniform_, program, index)
+}
