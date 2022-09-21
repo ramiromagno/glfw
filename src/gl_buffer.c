@@ -139,6 +139,11 @@ SEXP gl_enable_vertex_attrib_array_(SEXP index) {
   return R_NilValue;
 }
 
+SEXP gl_disable_vertex_attrib_array_(SEXP index) {
+  glDisableVertexAttribArray((GLuint) INTEGER(index)[0]);
+  return R_NilValue;
+}
+
 SEXP gl_delete_buffers_(SEXP buffers) {
 
   R_xlen_t n = XLENGTH(buffers);
