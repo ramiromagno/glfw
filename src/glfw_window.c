@@ -296,3 +296,16 @@ SEXP glfw_set_window_title_(SEXP window, SEXP title) {
   glfwSetWindowTitle((GLFWwindow *) R_ExternalPtrAddr(window), CHAR(STRING_ELT(title, 0)));
   return R_NilValue;
 }
+
+SEXP glfw_set_window_pos_(SEXP window, SEXP xpos, SEXP ypos) {
+
+  CHECK_GLFW_WINDOW(window);
+
+  glfwSetWindowPos(
+    (GLFWwindow *) R_ExternalPtrAddr(window),
+    (int) INTEGER(xpos)[0],
+    (int) INTEGER(ypos)[0]
+  );
+
+  return R_NilValue;
+}

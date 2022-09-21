@@ -137,3 +137,8 @@ glfw_set_window_attrib <- function(window, attrib, value) {
 glfw_set_window_title <- function(window, title) {
   .Call(glfw_set_window_title_, window, title)
 }
+
+#' @export
+glfw_set_window_pos <- function(window, xpos, ypos) {
+  .Call(glfw_set_window_pos_, window, xpos, ypos)
+}
