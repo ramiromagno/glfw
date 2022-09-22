@@ -36,6 +36,7 @@ extern SEXP gl_get_program_info_log_(SEXP);
 extern SEXP gl_get_program_iv_(SEXP, SEXP);
 extern SEXP gl_get_shader_info_log_(SEXP);
 extern SEXP gl_get_shader_iv_(SEXP, SEXP);
+extern SEXP gl_get_string_(SEXP);
 extern SEXP gl_get_uniform_location_(SEXP, SEXP);
 extern SEXP gl_is_shader_(SEXP);
 extern SEXP gl_link_program_(SEXP);
@@ -152,6 +153,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"gl_get_program_iv_",                  (DL_FUNC) &gl_get_program_iv_,                  2},
     {"gl_get_shader_info_log_",             (DL_FUNC) &gl_get_shader_info_log_,             1},
     {"gl_get_shader_iv_",                   (DL_FUNC) &gl_get_shader_iv_,                   2},
+    {"gl_get_string_",                      (DL_FUNC) &gl_get_string_,                      1},
     {"gl_get_uniform_location_",            (DL_FUNC) &gl_get_uniform_location_,            2},
     {"gl_is_shader_",                       (DL_FUNC) &gl_is_shader_,                       1},
     {"gl_link_program_",                    (DL_FUNC) &gl_link_program_,                    1},

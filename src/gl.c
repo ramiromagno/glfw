@@ -45,3 +45,13 @@ SEXP gl_disable_(SEXP cap) {
   glDisable((GLenum) INTEGER(cap)[0]);
   return R_NilValue;
 }
+
+SEXP gl_get_string_(SEXP name) {
+  const GLubyte *string = glGetString((GLenum) INTEGER(name)[0]);
+
+  if (string == NULL) {
+    return Rf_ScalarString(NA_STRING);
+  } else {
+    return Rf_mkString(string);
+  }
+}

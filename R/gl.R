@@ -39,3 +39,8 @@ gl_enable <- function(cap) {
 gl_disable <- function(cap) {
   .Call(gl_disable_, cap)
 }
+
+#' @export
+gl_get_string <- function(name) {
+  .Call(gl_get_string_, name)
+}
