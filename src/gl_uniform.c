@@ -138,7 +138,7 @@ SEXP gl_uniform_matrix4_fv_(SEXP location, SEXP transpose, SEXP value) {
 
   GLint _location = INTEGER(location)[0];
   R_len_t _n = XLENGTH(value);
-  GLsizei _count = _n / 4; // number of 4x4 matrices.
+  GLsizei _count = _n / 16; // number of 4x4 matrices.
   float *_ptr = (float *) R_alloc(_n, sizeof(float));
   for (R_xlen_t i = 0; i < _n; i++) _ptr[i] = (float) REAL(value)[i];
 
