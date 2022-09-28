@@ -164,6 +164,5 @@ while (!glfw_window_should_close(window))
 
 gl_delete_vertex_arrays(vao)
 gl_delete_buffers(vbo)
-gl_delete_buffers(ebo)
 glfw_destroy_window(window)
 glfw_terminate()
