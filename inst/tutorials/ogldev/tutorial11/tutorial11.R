@@ -11,11 +11,6 @@ rotate_transform <- function(angle3) {
 
   # Rotation around the y-axis
   rot_y <- glm_rotate(diag(1, nrow = 4), glm_rad(angle3[2]), c(0, 1, 0))
-  # patch
-  # waiting for reply on https://github.com/emeiri/ogldev/issues/14
-  rot_y[1, 3] <- -rot_y[1, 3]
-  rot_y[3, 1] <- -rot_y[3, 1]
-
 
   # Rotation around the z-axis
   rot_z <- glm_rotate(diag(1, nrow = 4), glm_rad(angle3[3]), c(0, 0, 1))
