@@ -170,7 +170,7 @@ while (!glfw_window_should_close(window))
   {
     model <- glm_translate(diag(1, nrow = 4), cube_positions[, i])
     angle <- 20 * i
-    glm_rotate(model, glm_rad(angle), c(1, 0.3, 0.5))
+    model <- glm_rotate(model, glm_rad(angle), c(1, 0.3, 0.5))
     gl_uniform_matrix4_fv(model_loc, GL$`FALSE`, model)
     gl_draw_arrays(GL$TRIANGLES, 0L, 36L)
   }
@@ -181,6 +181,5 @@ while (!glfw_window_should_close(window))
 
 gl_delete_vertex_arrays(vao)
 gl_delete_buffers(vbo)
-gl_delete_buffers(ebo)
 glfw_destroy_window(window)
 glfw_terminate()
