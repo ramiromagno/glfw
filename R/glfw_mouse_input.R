@@ -12,3 +12,8 @@ glfw_get_cursor_pos <- function(window) {
 glfw_set_cursor_pos <- function(window, xpos, ypos) {
   .Call(glfw_set_cursor_pos_, window, xpos, ypos)
 }
+
+#' @export
+glfw_set_scroll_callback <- function(window, cb) {
+  .Call(glfw_set_scroll_callback_, window, cb)
+}

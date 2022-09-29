@@ -1,8 +1,7 @@
 #include <glfw.h>
 
-// Global variable to hold the R function (closure) to be used as
-// cursor position callback.
 static SEXP r_cursor_pos_callback;
+static SEXP r_scroll_callback;
 
 static void cursor_pos_cb(GLFWwindow* _window, double _xpos, double _ypos)
 {
@@ -11,6 +10,19 @@ static void cursor_pos_cb(GLFWwindow* _window, double _xpos, double _ypos)
   SEXP ypos = PROTECT(Rf_ScalarReal(_ypos));
 
   SEXP call = PROTECT(Rf_lang4(r_cursor_pos_callback, window, xpos, ypos));
+  Rf_eval(call, R_EmptyEnv);
+
+  UNPROTECT(4);
+  return;
+}
+
+static void scroll_cb(GLFWwindow* _window, double _xoffset, double _yoffset) {
+
+  SEXP window = PROTECT(R_MakeExternalPtr(_window, R_NilValue, R_NilValue));
+  SEXP xoffset = PROTECT(Rf_ScalarReal(_xoffset));
+  SEXP yoffset = PROTECT(Rf_ScalarReal(_yoffset));
+
+  SEXP call = PROTECT(Rf_lang4(r_scroll_callback, window, xoffset, yoffset));
   Rf_eval(call, R_EmptyEnv);
 
   UNPROTECT(4);
@@ -50,5 +62,14 @@ SEXP glfw_set_cursor_pos_(SEXP window, SEXP xpos, SEXP ypos) {
 
   CHECK_GLFW_WINDOW(window);
   glfwSetCursorPos((GLFWwindow *) R_ExternalPtrAddr(window), REAL(xpos)[0], REAL(ypos)[0]);
+  return R_NilValue;
+}
+
+SEXP glfw_set_scroll_callback_(SEXP window, SEXP cb) {
+
+  CHECK_GLFW_WINDOW(window);
+  r_scroll_callback = cb;
+  glfwSetScrollCallback((GLFWwindow *) R_ExternalPtrAddr(window), scroll_cb);
+
   return R_NilValue;
 }
