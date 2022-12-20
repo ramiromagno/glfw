@@ -144,6 +144,8 @@ glfw_init()
 width <- 400L
 height <- 400L
 
+angle_in_radians <- 0.
+
 window <- glfw_create_window(width, height, "Tutorial 08: scaling transformation")
 glfw_make_context_current(window)
 glad_load_gl()
