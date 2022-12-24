@@ -47,3 +47,28 @@ gl_generate_mipmap <- function(target) {
 gl_active_texture <- function(texture) {
   .Call(gl_active_texture_, texture)
 }
+
+#' @export
+gl_tex_sub_image_2d <- function(target,
+                            level,
+                            xoffset,
+                            yoffset,
+                            width,
+                            height,
+                            format,
+                            type,
+                            pixels) {
+
+  .Call(
+    gl_tex_sub_image_2d_,
+    target,
+    level,
+    xoffset,
+    yoffset,
+    width,
+    height,
+    format,
+    type,
+    pixels
+  )
+}

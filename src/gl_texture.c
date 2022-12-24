@@ -101,3 +101,56 @@ SEXP gl_active_texture_(SEXP texture) {
   glActiveTexture((GLenum) INTEGER(texture)[0]);
   return R_NilValue;
 }
+
+SEXP gl_tex_sub_image_2d_(SEXP target,
+                      SEXP level,
+                      SEXP xoffset,
+                      SEXP yoffset,
+                      SEXP width,
+                      SEXP height,
+                      SEXP format,
+                      SEXP type,
+                      SEXP pixels) {
+
+  GLenum _target = (GLenum) INTEGER(target)[0];
+  GLint _level = (GLint) INTEGER(level)[0];
+  GLint _xoffset = (GLint) INTEGER(xoffset)[0];
+  GLint _yoffset = (GLint) INTEGER(yoffset)[0];
+  GLsizei _width = (GLsizei) INTEGER(width)[0];
+  GLsizei _height = (GLsizei) INTEGER(height)[0];
+  GLenum _format = (GLenum) INTEGER(format)[0];
+  GLenum _type = (GLenum) INTEGER(type)[0];
+
+  void * _pixels;
+  switch (TYPEOF(pixels)) {
+  case INTSXP:
+  {
+    _pixels = INTEGER(pixels);
+    break;
+  }
+  case REALSXP:
+  {
+    _pixels = REAL(pixels);
+    break;
+  }
+  case RAWSXP:
+  {
+    _pixels = RAW(pixels);
+    break;
+  }
+  default:
+    Rf_error("`data` must be an integer, double or raw vector.");
+  }
+
+  glTexSubImage2D(_target,
+               _level,
+               _xoffset,
+               _yoffset,
+               _width,
+               _height,
+               _format,
+               _type,
+               _pixels);
+
+  return R_NilValue;
+}
