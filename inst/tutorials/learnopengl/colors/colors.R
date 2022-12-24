@@ -1,7 +1,4 @@
 library(glfw)
-library(magick)
-
-# TODO: This is not working! Getting a black screen.
 
 # Path to directory containing R code to be sourced
 src_path <- system.file("tutorials/learnopengl/colors/R", package = "glfw", mustWork = TRUE)
