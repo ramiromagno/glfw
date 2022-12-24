@@ -16,7 +16,7 @@ Description: GLFW is a lightweight utility library for use with OpenGL:
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.2.1
+RoxygenNote: 7.2.3
 Roxygen: list(markdown = TRUE)
 SystemRequirements: glfw: glfw-x11 (archlinux), libglfw3-dev (deb), glfw-devel (rpm)
 Depends: 
