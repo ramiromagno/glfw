@@ -38,3 +38,28 @@ Make sure you have not inadvertently placed a C file in the R/ folder, instead o
 4. Source files starting with `gl_` provide the OpenGL API.
 5. Source files starting with `r_` provide novel API but that is not GLFW API per se, typically utility functions.
 6. GL and GLFW constants are generated in data-raw/ and exported as datasets.
+
+### GLAD
+
+1. Install `python-glad`:
+
+   ```bash
+   yay -S python-glad
+   ```
+
+   
+
+2. Run `glad` to generate `glad.c` and `glad.h`:
+
+   ```bash
+   glad --generator c --out-path .
+   ```
+
+   You should have now:
+
+   - `include/glad.h`
+   - `src/glad.c`
+
+Troubleshooting: <https://stackoverflow.com/questions/58053885/having-an-issue-with-gladloadgl-im-getting-an-error-saying-it-does-not-take>
+
+
